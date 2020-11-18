@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Disco Tienda</title>
+
+        <h:outputStylesheet name="primeicons/primeicons.css" library="primefaces" />
+    </h:head>
+    <!--Estilos-->
+    <style>
+        .cuerpo{
+            background-color: black;
+        }
+        .titulo{
+            text-align: center;
+            color: white;
+            background: brown;
+            font-size: 55px;
+            margin-top: 100px;
+        }
+        .menu{
+            margin-top: 100px;
+        }
+    </style>
+    <h:body class="cuerpo">
+        <div class="img">
+            
+        </div>
+        <div class="titulo">
+            <h2 class="titulo">Disco Tienda</h2>
+        </div>
+        
+        <div class="menu">
+            <p:dock position="top" > 
+                <p:menuitem value="Inicio" icon="/resources/images/dock/hogar.png" url="#"/>
+                <p:menuitem value="Login" icon="/resources/images/dock/login.png" url="#"/>
+                <p:menuitem value="Nosotros" icon="/resources/images/dock/pregunta.png" url="#"/>
+
+            </p:dock>
+        </div>
+
+    </h:body>
+</html>
+
