@@ -19,7 +19,7 @@ public class LoginPojo {
 
     Statement st;
 
-    public void traeDatos(String nombre, String apellido, String correo, String username, String password) {
+  /*  public void traeDatos(String nombre, String apellido, String correo, String username, String password) {
         try {
             st = ConexionBaseDatos.conect.conexion().createStatement();
             st.executeUpdate(Select.traeDatos("compradores", username, password));
@@ -27,6 +27,6 @@ public class LoginPojo {
         } catch (SQLException ex) {
             Logger.getLogger(LoginPojo.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
+    }*/
 
 }
