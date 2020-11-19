@@ -1,0 +1,5 @@
+com\mycompany\proyectofinallinea1\pojo\RegistroUserPojo.class
+com\mycompany\proyectofinallinea1\controller\IndexController.class
+com\mycompany\proyectofinallinea1\controller\loginController.class
+com\mycompany\proyectofinallinea1\controller\RegistroUserController.class
+com\mycompany\proyectofinallinea1\services\Conexion.class
