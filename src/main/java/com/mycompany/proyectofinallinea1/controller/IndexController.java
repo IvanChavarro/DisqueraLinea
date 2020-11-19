@@ -25,7 +25,12 @@ public class IndexController {
     public String login(){
         return "faces/login.xhtml";
     }
+<<<<<<< HEAD
     public String registro(){
         return "faces/registroUser.xhtml";
+=======
+     public String registro(){
+        return "faces/RegistroUser.xhtml";
+>>>>>>> interfaz
     }
 }
