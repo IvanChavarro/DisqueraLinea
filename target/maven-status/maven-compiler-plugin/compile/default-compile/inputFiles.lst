@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\Karen\Documents\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\controller\IndexController.java
 C:\Users\Karen\Documents\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\controller\RegistroUserController.java
 C:\Users\Karen\Documents\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\pojo\ConexionBaseDatos.java
@@ -10,3 +11,15 @@ C:\Users\Karen\Documents\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\
 C:\Users\Karen\Documents\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\pojo\LoginPojo.java
 C:\Users\Karen\Documents\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\pojo\RegistroUserPojo.java
 C:\Users\Karen\Documents\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\controller\LoginController.java
+=======
+C:\Users\ivan_\OneDrive\Documentos\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\pojo\RegistroUserPojo.java
+C:\Users\ivan_\OneDrive\Documentos\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\controller\RegistroUserController.java
+C:\Users\ivan_\OneDrive\Documentos\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\pojo\LoginPojo.java
+C:\Users\ivan_\OneDrive\Documentos\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\services\Insert.java
+C:\Users\ivan_\OneDrive\Documentos\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\controller\IndexController.java
+C:\Users\ivan_\OneDrive\Documentos\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\controller\LoginController.java
+C:\Users\ivan_\OneDrive\Documentos\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\pojo\ConexionBaseDatos.java
+C:\Users\ivan_\OneDrive\Documentos\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\services\Conexion.java
+C:\Users\ivan_\OneDrive\Documentos\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\controller\ArtistaController.java
+C:\Users\ivan_\OneDrive\Documentos\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\pojo\ArtistaPojo.java
+>>>>>>> 58f1901224dd5ab8c9e56ff1e8c28f43c3e3741d

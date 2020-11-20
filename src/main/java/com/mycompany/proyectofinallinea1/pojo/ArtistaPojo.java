@@ -17,10 +17,10 @@ import java.util.logging.Logger;
  */
 public class ArtistaPojo {
 Statement st;
-    public void envioRegistro(String nombre, String nacionalidad) {
+    public void envioRegistro(String nombre, String nacionalidad, String ruta) {
         try {
             st = ConexionBaseDatos.conect.conexion().createStatement();
-            st.executeUpdate(Insert.EnviarDatos("artistas", nombre, nacionalidad, "22-03-2000", "n/a", "n/a"));
+            st.executeUpdate(Insert.EnviarDatos("artistas", nombre, nacionalidad, "22-03-2000", "n/a", ruta ));
         } catch (SQLException ex) {
             Logger.getLogger(RegistroUserPojo.class.getName()).log(Level.SEVERE, null, ex);
         }

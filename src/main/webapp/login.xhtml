@@ -89,6 +89,7 @@
             border-radius: 5px;
         }
     </style>
+<<<<<<< HEAD
     <h:body class="cuerpo">
         <!--menu-->
         <div class="titulo">
@@ -114,6 +115,29 @@
                     <br/><br/><br/>
                     <p:commandButton class="boton" value="Enviar" id="ajax" update="growl" action="#{buttonView.buttonAction}"/>
                 </h:form>
+=======
+    <h:body>
+        <h:form>    
+            <div class="contenedor">
+
+                <fieldset >
+                    <legend>Login</legend>
+                    <h:form>
+                        <p:growl id="growl" life="2000" />
+                        <p:outputLabel for="nombre" value="Nombre: "/>
+                        <p:inputText id="nombre" value="#{loginController.usuario}" />
+                        <br></br>
+                        <br></br>
+                        <p:outputLabel for="password" value="Password: "/>
+                        <p:inputText id="password" type="password" value="#{loginController.pass}"/> 
+                        <br></br><br></br>
+                    </h:form>
+                    <p:commandButton value="Enviar" action="#{loginController.login()}"/>
+
+                </fieldset>
+
+
+>>>>>>> 58f1901224dd5ab8c9e56ff1e8c28f43c3e3741d
             </div>
         </fieldset>
     </h:body>
