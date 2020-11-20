@@ -10,36 +10,80 @@
     </h:head>
     <!--Estilos-->
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
         .cuerpo{
-            background-color: black;
+
+            background-image: url(resources/images/fondos/pexels-spencer-selover-775414.jpg);
+            background-position:top center;
+            position: absolute;
+            background-size: cover;/*imagen mas ajustada*/
+            height: 10px;/*100 de alto*/
         }
         .titulo{
-            text-align: center;
-            color: white;
-            background: brown;
-            font-size: 55px;
-            margin-top: 100px;
+            background-image: url(resources/images/iconos/logo.png);
+            background-size: cover;/*imagen mas ajustada*/
+            position: absolute;
+            margin-left: 100px;
+            padding-left: 179px;
+            width: 40px;
+            height: 175px;/*100 de alto*/
         }
         .menu{
-            margin-top: 100px;
+            margin-left: 200px;
+            margin-top: 70px;
+            padding-left: 100px;
+            width: 500px;
+            font-size: 20px;
+            background-color:   rgb(231, 101, 14);
+            text-transform: uppercase;
+            font-family: 'PT Sans', sans-serif;
+            color: black;
+            font-weight: bold;
+        }
+        .margin{
+            text-align: center;
+            width: 100%;
+            margin-top: 700px;
+        }
+        .margen{
+            background-color:rgba(35, 28, 26, 0.66);
+            margin-top: 15px;
+            margin-left: 100px;
+            padding-right: 200px;
+            padding-bottom: 100px;
+            padding-top: 50px;
+
+            color: #ffffff;
+            text-transform: uppercase;
+
         }
     </style>
     <h:body class="cuerpo">
-        <div class="img">
-            
-        </div>
+
         <div class="titulo">
-            <h2 class="titulo">Disco Tienda</h2>
+            <p:megaMenu class="menu">
+                <p:menuitem class="inicio" value="Inicio"  url="#" />
+                <p:menuitem class="login" value="Login" url="#{indexController.login()}" />
+                <p:menuitem value="Registro" url="#{indexController.registro()}" />
+                <p:menuitem value="Nosotros" url="#" />
+            </p:megaMenu>
         </div>
-        
-        <div class="menu">
-            <p:dock position="top" > 
-                <p:menuitem value="Inicio" icon="/resources/images/dock/hogar.png" url="#"/>
-                <p:menuitem value="Login" icon="/resources/images/dock/login.png" url="#{indexController.login()}"/>
-                <p:menuitem value="Registrarse" icon="/resources/images/dock/login.png" url="#{indexController.registro()}"/>
-                <p:menuitem value="Nosotros" icon="/resources/images/dock/pregunta.png" url="#"/>
-            </p:dock>
+        <div class="margin">
+            <p:fieldset class="margen">
+                <p:outputLabel class="texto" value="aqui va un texto asdfghjhgfdsdfghfgfdseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeed"/>
+
+            </p:fieldset>
         </div>
+        <!--Imagenes-->
+        <!--div class="banner">
+            <p:contentFlow value="#" var="image">
+                <p:graphicImage name="/imagenes/banner/#" styleClass="content" />
+            </p:contentFlow>
+        </div-->
+        <!--nosotros-->
 
     </h:body>
 </html>

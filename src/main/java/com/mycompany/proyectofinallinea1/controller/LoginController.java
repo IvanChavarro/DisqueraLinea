@@ -23,7 +23,6 @@ public class LoginController {
      */
     public LoginController() {
     }
-
     public String getText() {
         return text;
     }
