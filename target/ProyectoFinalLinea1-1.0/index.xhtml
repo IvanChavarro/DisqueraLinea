@@ -15,8 +15,8 @@
             padding: 0;
         }
         .cuerpo{
-<<<<<<< HEAD
-
+            width: 100%;
+            background-image: url(resources/images/fondos/pexels-yuri-manei-2272854.jpg);
             background-image: url(resources/images/fondos/pexels-spencer-selover-775414.jpg);
             background-position:top center;
             position: absolute;
@@ -61,28 +61,8 @@
             text-transform: uppercase;
 
         }
-    </style>
-    <h:body class="cuerpo">
-
-        <div class="titulo">
-            <p:megaMenu class="menu">
-                <p:menuitem class="inicio" value="Inicio"  url="#" />
-                <p:menuitem class="login" value="Login" url="#{indexController.login()}" />
-                <p:menuitem value="Registro" url="#{indexController.registro()}" />
-                <p:menuitem value="Nosotros" url="#" />
-            </p:megaMenu>
-        </div>
-        <div class="margin">
-            <p:fieldset class="margen">
-                <p:outputLabel class="texto" value="aqui va un texto asdfghjhgfdsdfghfgfdseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeed"/>
-
-            </p:fieldset>
-=======
-            width: 100%;
-            background-image: url(resources/images/fondos/pexels-yuri-manei-2272854.jpg);
-        }
         .contacto h2{
-            
+
             text-align: left;
             color: white;
             background: brown;
@@ -105,20 +85,20 @@
         }
     </style>
     <h:body class="cuerpo">
-        <div class="contacto">
-            <h2 class="titulo">contactenos</h2>
-        </div>   
+
         <div class="titulo">
-            <h3>Disco Tienda</h3>
+            <p:megaMenu class="menu">
+                <p:menuitem class="inicio" value="Inicio"  url="#" />
+                <p:menuitem class="login" value="Login" url="#{indexController.login()}" />
+                <p:menuitem value="Registro" url="#{indexController.registro()}" />
+                <p:menuitem value="Nosotros" url="#" />
+            </p:megaMenu>
         </div>
-        <div class="menu">
-            <p:dock position="top"> 
-                <p:menuitem value="Inicio" icon="/resources/images/dock/hogar.png" url="#"/>
-                <p:menuitem value="Login" icon="/resources/images/dock/login.png" url="#{indexController.login()}"/>
-                <p:menuitem value="Registrarse" icon="/resources/images/dock/login.png" url="#{indexController.registro()}"/>
-                <p:menuitem value="Nosotros" icon="/resources/images/dock/pregunta.png" url="#"/>
-            </p:dock>
->>>>>>> 58f1901224dd5ab8c9e56ff1e8c28f43c3e3741d
+        <div class="margin">
+            <p:fieldset class="margen">
+                <p:outputLabel class="texto" value="aqui va un texto asdfghjhgfdsdfghfgfdseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeed"/>
+
+            </p:fieldset>
         </div>
         <!--Imagenes-->
         <!--div class="banner">
