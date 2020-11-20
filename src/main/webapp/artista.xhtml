@@ -26,12 +26,12 @@
             <br></br><br></br>
             <div>
                 <p:outputLabel for="spanish" value="Fecha de nacimiento:  " />
-                <p:datePicker id="spanish"  locale="es" monthNavigator="true" pattern="yyyy-MMM-dd"/>
+                <p:calendar id="spanish" value="#{artistaController.fecha_nac}"/>
             </div>
             <br></br><br></br>
 
             <p:fileUpload listener="#{artistaController.handleFileUpload}" mode="advanced" dragDropSupport="false" allowTypes="/(\.|\/)(jpg|jpeg|png)$/" />
-            <p:commandButton actionListener="#{artistaController.enviar()}" update="growl" value="Enviar datos"/>
+            <p:commandButton actionListener="#{artistaController.enviar(artistaController.fecha_nac)}" update="growl" value="Enviar datos"/>
         </h:form>
         
     </h:body>

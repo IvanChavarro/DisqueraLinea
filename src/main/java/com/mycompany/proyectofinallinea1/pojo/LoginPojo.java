@@ -26,18 +26,18 @@ public class LoginPojo {
         try {
             st = ConexionBaseDatos.conect.conexion().createStatement();
             ResultSet rs = st.executeQuery("SELECT * FROM administrador where nombre = '" + username + "' and password = '" + password + "'");
-            System.out.println(rs.toString());
+            System.out.println(rs.toString()+" resultset");
             while (rs.next()) {
                 user = rs.getString("nombre");
                 pass = rs.getString("password");
             }
-            System.out.println("user "+user+" username "+username);
+            System.out.println("parte administrador user " + user + " username " + username);
             if (user.equalsIgnoreCase(username) && pass.equalsIgnoreCase(password)) {
                 dato = "Admin";
                 System.out.println(dato + " Dato");
             }
-            
-        } catch (SQLException ex) {
+
+        } catch (Exception ex) {
             try {
                 st = ConexionBaseDatos.conect.conexion().createStatement();
                 ResultSet rs = st.executeQuery("SELECT * FROM compradores where username = '" + username + "' and password = '" + password + "'");
@@ -45,11 +45,14 @@ public class LoginPojo {
                     user = rs.getString("username");
                     pass = rs.getString("password");
                 }
-                if (username.equalsIgnoreCase(user) && password.equalsIgnoreCase(user)) {
+                System.out.println(String.format("%s,%s", user,pass));
+                System.out.println("parte comprador user " + user + " username " + username);
+                if (user.equalsIgnoreCase(username) && pass.equalsIgnoreCase(password)) {
                     dato = "Comprador";
+                    System.out.println(dato + " Dato");
                 }
 
-            } catch (SQLException ex1) {
+            } catch (Exception ex1) {
                 Logger.getLogger(LoginPojo.class.getName()).log(Level.SEVERE, null, ex1);
                 dato = "falso";
             }

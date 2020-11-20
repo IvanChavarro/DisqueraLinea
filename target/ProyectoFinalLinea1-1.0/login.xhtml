@@ -105,12 +105,12 @@
             <p:separator class="separador"/>
             <div class="contenido">
                 <h:form>
-                    <p:growl id="growl" life="2000" />
+                    <p:growl id="growl"  />
                     <p:outputLabel for="nombre" value="Nombre: "/>
-                    <p:inputText class="campo" id="nombre" value="#{loginController.usuario}" style="width: 200px;"/>  
+                    <p:inputText class="campo" id="nombre" value="#{loginController.usuario}" required="true"/>  
                     <br></br><br></br><br></br>                    
                     <p:outputLabel for="password" value="Password: "/>
-                    <p:inputText class="campo" id="password" value="#{loginController.pass}" type="password" style="width: 200px;"/> 
+                    <p:inputText class="campo" id="password" value="#{loginController.pass}" type="password" required="true"/> 
                     <br/><br/><br/>
                     <p:commandButton class="boton" value="Enviar" id="ajax" update="growl" action="#{loginController.login()}"/>
                 </h:form>

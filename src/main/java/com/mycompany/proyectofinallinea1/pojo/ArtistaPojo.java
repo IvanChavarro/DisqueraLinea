@@ -16,15 +16,16 @@ import java.util.logging.Logger;
  * @author Iván
  */
 public class ArtistaPojo {
-Statement st;
-    public void envioRegistro(String nombre, String nacionalidad, String ruta) {
+
+    Statement st;
+
+    public void envioRegistro(String nombre, String nacionalidad, String fecha, String ruta) {
         try {
             st = ConexionBaseDatos.conect.conexion().createStatement();
-            st.executeUpdate(Insert.EnviarDatos("artistas", nombre, nacionalidad, "22-03-2000", "n/a", ruta ));
+            st.executeUpdate(Insert.EnviarDatos("artistas", nombre, nacionalidad, fecha, "n/a", ruta));
         } catch (SQLException ex) {
             Logger.getLogger(RegistroUserPojo.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    
 }
