@@ -26,11 +26,8 @@ public class LoginController {
      */
     public LoginController() {
     }
-<<<<<<< HEAD
-    public String getText() {
-        return text;
-=======
 
+    
     public void login() throws IOException {
         LoginPojo loginPojo = new LoginPojo();
         System.out.println("El usuario es: " + usuario);
@@ -41,7 +38,7 @@ public class LoginController {
         } else {
             System.out.println("error");
         }
->>>>>>> 58f1901224dd5ab8c9e56ff1e8c28f43c3e3741d
+
     }
 
     public String getUsuario() {
