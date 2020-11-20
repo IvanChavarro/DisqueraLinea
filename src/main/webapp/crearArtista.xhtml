@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <style>
+        .cuerpo{
+            background-image: url(resources/images/fondos/pexels-spencer-selover-775414.jpg);
+            background-position:top center;
+            background-size: cover;/*imagen mas ajustada*/
+            height: 10px;/*100 de alto*/
+        }
+        .titulo{
+            background-image: url(resources/images/iconos/logo.png);
+            background-size: cover;/*imagen mas ajustada*/
+            position: absolute;
+            margin-left: 100px;
+            padding-left: 179px;
+            width: 40px;
+            height: 175px;/*100 de alto*/
+        }
+        .menu{
+            margin-left: 200px;
+            margin-top: 70px;
+            padding-left: 100px;
+            width: 500px;
+            font-size: 20px;
+            background-color:   rgb(231, 101, 14);
+            text-transform: uppercase;
+            font-family: 'PT Sans', sans-serif;
+            color: black;
+            font-weight: bold;
+        }
+        .separador{
+            background:  black;
+        }
+        .margen{
+            background-color: rgba(153, 58, 11, 0.87);
+            margin-top: 120px;
+            margin-left: 330px;
+            margin-right: 300px;
+            padding-left: 200px;
+            padding-right: 190px;
+            padding-bottom: 80px;
+        }
+        .tittle{
+            text-align: center;
+            padding: 15px;
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-top: 180px;
+            font-size: 40px;
+            font-weight: bold;
+            color: #ffffff;
+            border: #fe4918;
+        }
+        .contenido{
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 70px;
+            padding-bottom: 20px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+        .boton{
+            text-decoration: none;
+            padding: 2px;
+            padding-left: 7px;
+            padding-right: 7px;
+            font-family: helvetica;
+            font-weight: 300;
+            font-size: 22px;
+            font-style: italic;
+            color: #1d0b02;
+            background-color: #692807;
+            border-radius: 15px;
+            border: 3px double #ee5b11;
+        }
+        .campo{
+            border-radius: 5px;
+        }
+    </style>
+    <h:body class="cuerpo">
+        <!--menu-->
+        <div class="titulo">
+            <p:megaMenu class="menu">
+                <p:menuitem value="Inicio"  url="#" />
+                <p:menuitem value="Registro" url="#{indexController.registro()}" />
+                <p:menuitem value="Nosotros" url="#" />
+            </p:megaMenu>
+        </div>
+        <!--formulario-->
+        <fieldset class="margen">
+            <legend class="tittle">Crear Artista</legend>
+            <br/>
+            <p:separator class="separador"/>
+            <div class="contenido">
+                <h:form>  
+                    <h2> Nombre: </h2>
+                    <span class="ui-float-label">
+                        <p:inputText id="float-input" />
+                        <p:outputLabel for="@previous" value="Ingrese el nombre" />
+                    </span>
+
+                </h:form>
+
+
+            </div>
+        </fieldset>
+        <div>
+
+        </div>
+    </h:body>
+</html>
+
