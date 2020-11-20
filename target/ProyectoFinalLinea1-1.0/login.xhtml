@@ -107,12 +107,19 @@
                 <h:form>
                     <p:growl id="growl" life="2000" />
                     <p:outputLabel for="nombre" value="Nombre: "/>
+<<<<<<< HEAD
                     <p:inputText class="campo" id="nombre"/>  
                     <br></br><br></br><br></br>                    
                     <p:outputLabel for="password" value="Password: "/>
                     <p:inputText class="campo" id="password" type="password"/> 
+=======
+                    <p:inputText class="campo" id="nombre" value="#{loginController.usuario}" style="width: 200px;"/>  
+                    <br></br><br></br><br></br>                    
+                    <p:outputLabel for="password" value="Password: "/>
+                    <p:inputText class="campo" id="password" value="#{loginController.pass}" type="password" style="width: 200px;"/> 
+>>>>>>> 175fcdff5f4890500fc424970792e9693c503b9c
                     <br/><br/><br/>
-                    <p:commandButton class="boton" value="Enviar" id="ajax" update="growl" action="#{buttonView.buttonAction}"/>
+                    <p:commandButton class="boton" value="Enviar" id="ajax" update="growl" action="#{loginController.login()}"/>
                 </h:form>
             </div>
         </fieldset>
