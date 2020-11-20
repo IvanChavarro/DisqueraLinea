@@ -7,7 +7,6 @@ package com.mycompany.proyectofinallinea1.controller;
 
 import com.mycompany.proyectofinallinea1.pojo.LoginPojo;
 import java.io.IOException;
-import java.sql.Date;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.context.FacesContext;
@@ -30,11 +29,15 @@ public class LoginController {
     public LoginController() {
     }
 
+    /**
+     * Redirección a páginas JSF
+     * @throws IOException 
+     */
     public void login() throws IOException {
         LoginPojo loginPojo = new LoginPojo();
         System.out.println("El usuario es: " + usuario);
         if (loginPojo.traeDatos(usuario, pass).equalsIgnoreCase("Admin")) {
-            FacesContext.getCurrentInstance().getExternalContext().redirect("faces/artista.xhtml");
+            FacesContext.getCurrentInstance().getExternalContext().redirect("faces/administrador.xhtml");
         } else if (loginPojo.traeDatos(usuario, pass).equalsIgnoreCase("Comprador")) {
             FacesContext.getCurrentInstance().getExternalContext().redirect("faces/index.xhtml");
         } else {
