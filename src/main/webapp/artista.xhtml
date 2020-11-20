@@ -7,7 +7,8 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        <h:form id="growl">
+        <h:form id="growl" enctype="multipart/form-data">
+
             <br></br><br></br>
             <div>
                 <span class="ui-float-label">
@@ -27,11 +28,12 @@
                 <p:outputLabel for="spanish" value="Fecha de nacimiento:  " />
                 <p:datePicker id="spanish"  locale="es" monthNavigator="true" pattern="yyyy-MMM-dd"/>
             </div>
+            <br></br><br></br>
 
+            <p:fileUpload listener="#{artistaController.handleFileUpload}" mode="advanced" dragDropSupport="false" allowTypes="/(\.|\/)(jpg|jpeg|png)$/" />
+            <p:commandButton actionListener="#{artistaController.enviar()}" update="growl" value="Enviar datos"/>
         </h:form>
-
-        <br></br><br></br>
-        <p:commandButton value="ENVIAR" action="#{artistaController.enviar()}" id="withIcon"  update="growl" style="margin-right:20px;" icon="pi pi-save" />
+        
     </h:body>
 </html>
 

@@ -27,14 +27,14 @@
                     <h:form>
                         <p:growl id="growl" life="2000" />
                         <p:outputLabel for="nombre" value="Nombre: "/>
-                        <p:inputText id="nombre" style="width: 200px;"/>  
+                        <p:inputText id="nombre" value="#{loginController.usuario}" />
                         <br></br>
                         <br></br>
                         <p:outputLabel for="password" value="Password: "/>
-                        <p:inputText id="password" type="password" style="width: 200px;"/> 
+                        <p:inputText id="password" type="password" value="#{loginController.pass}"/> 
                         <br></br><br></br>
-                        <p:commandButton value="Enviar" id="ajax" update="growl" action="#{buttonView.buttonAction}" style="margin-right:20px;" styleClass="ui-priority-primary" />
                     </h:form>
+                    <p:commandButton value="Enviar" action="#{loginController.login()}"/>
 
                 </fieldset>
 
