@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid id="grid" columns="3" cellpadding="5">
+                <p:outputLabel for="Nombre" value="Nombre de la canción"/>
+                <p:inputText value="#{crearCancionesController.nombreCancion}" required="true" id="Nombre"/>
+                <p:message for="Nombre" display="Nombre"/>
+                
+                <p:outputLabel for="costo" value="Precio"/>
+                <p:inputText value="#{crearCancionesController.precio}" id="costo" required="true"/>
+                <p:message for="costo" display="Costo"/>
+
+                <p:outputLabel for="MenuComboBox"/>
+                <h:selectOneMenu id="MenuComboBox" value="#{crearCancionesController.albumSeleccionado}" class="menu">
+                    <f:selectItems value="#{crearCancionesController.lista}"/>
+                </h:selectOneMenu>
+            </h:panelGrid>
+            <p:commandButton update="grid" value="Agregar" actionListener="#{crearCancionesController.enviar()}"/>
+        </h:form>
+    </h:body>
+</html>
+

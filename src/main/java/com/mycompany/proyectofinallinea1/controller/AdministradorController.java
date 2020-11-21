@@ -23,8 +23,16 @@ public class AdministradorController {
      */
     public AdministradorController() {
     }
-    
-    public void registraArtista() throws IOException{
-        FacesContext.getCurrentInstance().getExternalContext().redirect("../faces/artista.xhtml");
+
+    public void registraArtista() throws IOException {
+        FacesContext.getCurrentInstance().getExternalContext().redirect("../seguridad/artista.xhtml");
+    }
+
+    public void registrarAlbum() throws IOException {
+        FacesContext.getCurrentInstance().getExternalContext().redirect("../seguridad/crearAlbum.xhtml");
+    }
+
+    public void registrarCancion() throws IOException {
+        FacesContext.getCurrentInstance().getExternalContext().redirect("../seguridad/crearCanciones.xhtml");
     }
 }

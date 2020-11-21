@@ -5,10 +5,9 @@
  */
 package com.mycompany.proyectofinallinea1.pojo;
 
-import java.sql.ResultSet;
+import com.mycompany.proyectofinallinea1.services.Insert;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -18,30 +17,13 @@ import java.util.logging.Logger;
  */
 public class CrearAlbumPojo {
 
-    Statement st;
-    ArrayList<String> id = null;
-    ArrayList<String> artistas = null;
-
-    public ArrayList<String> TraeDatos() {
+    public void envioRegistro(String id_artista, String nombreAlbum, String precio) {
+        Statement st;
         try {
             st = ConexionBaseDatos.conect.conexion().createStatement();
-            ResultSet rs = st.executeQuery("SELECT id_artista, nombre FROM artistas");
-            while (rs.next()) {
-                String id;
-                String nom;
-                id = rs.getString("id_artista");
-                nom = rs.getString("nombre");
-                this.id.add(id);
-                this.artistas.add(nom);
-                
-            }
-            for(int i = 0; i < artistas.size(); i++){
-                System.out.println(artistas.get(i));
-            }
-
-        } catch (Exception ex) {
-            Logger.getLogger(CrearAlbumPojo.class.getName()).log(Level.SEVERE, null, ex);
+            st.executeUpdate(Insert.EnviarDatos("album", nombreAlbum, precio, id_artista, "n/a", "n/a"));
+        } catch (SQLException ex) {
+            Logger.getLogger(RegistroUserPojo.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return artistas;
     }
 }

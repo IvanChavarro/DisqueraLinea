@@ -9,14 +9,14 @@
     <!--Estilos-->
     <style>
         .cuerpo{
-            background-image: url(resources/images/fondos/pexels-spencer-selover-775414.jpg);
+            background-image: url(../resources/images/fondos/pexels-spencer-selover-775414.jpg);
             background-position:top center;
             position: absolute;
             background-size: cover;/*imagen mas ajustada*/
             height: 10px;/*100 de alto*/
         }
         .titulo{
-            background-image: url(resources/images/iconos/logo.png);
+            background-image: url(../resources/images/iconos/logo.png);
             background-size: cover;/*imagen mas ajustada*/
             position: absolute;
             margin-left: 100px;
@@ -42,7 +42,7 @@
             margin-top: 170px;
             margin-left: 200px;
             padding-left: 30px;
-            
+
         }
         .margen{
             background-color: rgba(153, 58, 11, 0.87);
@@ -118,28 +118,27 @@
                 <p:separator class="separador"/>
                 <br/><br/>
                 <div class="contenido">
-                    <h:form id="growl" >
-                        <div>
-                            <p:outputLabel value="Nombre: "/>   
-                            <p:inputText id="Nombre" value="#{artistaController.nombre}" />
-                        </div>
-                        <br/>
-                        <div>
-                            <p:outputLabel value="Nacionalidad: " />
-                            <p:inputText id="Nacionalidad" value="#{artistaController.nacionalidad}" />
-                        </div>
-                        <br/>
-                        <div>
+                    <h:form>
+                        <h:panelGrid id="grid" columns="3" cellpadding="5">
+                            <p:outputLabel value="Nombre"/>   
+                            <p:inputText id="Nombre" required="true" value="#{artistaController.nombre}" />
+                            <p:message for="Nombre" />
+
+                            <p:outputLabel value="Nacionalidad" />
+                            <p:inputText id="Nacionalidad" required="true"  value="#{artistaController.nacionalidad}" />
+                            <p:message for="Nacionalidad" display="Nacionalidad" />
+
                             <p:outputLabel for="spanish" value="Fecha de nacimiento:  " />
-                            <p:calendar id="spanish" value="#{artistaController.fecha_nac}"/>
-                        </div>
-                        <br/><br/>
-                        <div class="choose">
-                            <p:fileUpload listener="#{artistaController.handleFileUpload}" mode="advanced" dragDropSupport="false" allowTypes="/(\.|\/)(jpg|jpeg|png)$/" />
-                        </div>
-                        <br/><br/>
-                        <p:commandButton class="boton" actionListener="#{artistaController.enviar(artistaController.fecha_nac)}" update="growl" value="Enviar datos"/>
+                            <p:calendar id="spanish" required="true" value="#{artistaController.fecha_nac}"/>
+                            <p:message for="spanish" display="spanish" />
+
+                            <p:outputLabel for="calendar" value="image" />
+                            <p:fileUpload id="calendar" listener="#{artistaController.handleFileUpload}" mode="advanced" dragDropSupport="false" allowTypes="/(\.|\/)(jpg|jpeg|png)$/" />
+                            <p:message for="calendar" display="calendar"  />
+                        </h:panelGrid>
+                        <p:commandButton class="boton" actionListener="#{artistaController.enviar(artistaController.fecha_nac)}" update="grid" value="Enviar datos"/>
                     </h:form>
+
                 </div>
             </fieldset>          
         </div>

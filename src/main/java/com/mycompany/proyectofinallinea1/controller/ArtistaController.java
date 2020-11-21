@@ -7,6 +7,7 @@ package com.mycompany.proyectofinallinea1.controller;
  */
 import com.mycompany.proyectofinallinea1.pojo.ArtistaPojo;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.Date;
 import java.text.DateFormat;
@@ -15,6 +16,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
@@ -37,6 +40,7 @@ public class ArtistaController implements Serializable {
     private UploadedFile file;
     private String nombre, nacionalidad;
     private byte auxDisabled = 0;
+    private String message;
     private Date fecha_nac;
     String so = System.getProperty("os.name");
     String ruta_temporal = "C://xampp//LineaDeProfundizacion/";
@@ -66,6 +70,19 @@ public class ArtistaController implements Serializable {
         fec = (formato.format(fecha_nac));
         ArtistaPojo artista = new ArtistaPojo();
         artista.envioRegistro(nombre, nacionalidad, fec, ruta_temporal);
+        try {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("../seguridad/administrador.xhtml");
+        } catch (IOException ex) {
+            Logger.getLogger(ArtistaController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public UploadedFile getFile() {
