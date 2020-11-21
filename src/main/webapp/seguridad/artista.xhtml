@@ -39,19 +39,6 @@
         }
         .contenedor{
             float: left;
-<<<<<<< HEAD
-            margin-top: 170px;
-            margin-left: 200px;
-            padding-left: 30px;
-
-=======
-            margin-top: 160px;
-            margin-left: 170px;
-            padding-right:  90px;
-            padding-bottom: 40px;
-            text-transform: uppercase;
-            font-family: 'Finger Paint', cursive;
->>>>>>> 5a48c5e21e4fc0c2b13feaddd5be97ddcb4d8433
         }
         .margen{
             background-color: rgba(153, 58, 11, 0.87);
@@ -81,7 +68,7 @@
             background-color: #692807;
             border-radius: 15px;
             border: 3px double #ee5b11;
-            
+
         }
         .choose{
             padding-left: 10px;
@@ -142,7 +129,6 @@
                 <p:separator class="separador"/>
                 <br/><br/>
                 <div class="contenido">
-<<<<<<< HEAD
                     <h:form>
                         <h:panelGrid id="grid" columns="3" cellpadding="5">
                             <p:outputLabel value="Nombre"/>   
@@ -162,31 +148,7 @@
                             <p:message for="calendar" display="calendar"  />
                         </h:panelGrid>
                         <p:commandButton class="boton" actionListener="#{artistaController.enviar(artistaController.fecha_nac)}" update="grid" value="Enviar datos"/>
-=======
-                    <h:form id="growl" >
-                        <div>
-                            <p:outputLabel class="texto" value="Nombre: "/>   
-                            <p:inputText class="campo"  id="Nombre" value="#{artistaController.nombre}" />
-                        </div>
-                        <br/>
-                        <div>
-                            <p:outputLabel class="texto" value="Nacionalidad: " />
-                            <p:inputText class="campo"  id="Nacionalidad" value="#{artistaController.nacionalidad}" />
-                        </div>
-                        <br/>
-                        <div>
-                            <p:outputLabel class="texto" for="spanish" value="Fecha de nacimiento:  " />
-                            <p:calendar class="campo"  id="spanish" value="#{artistaController.fecha_nac}"/>
-                        </div>
-                        <br/><br/>
-                        <div class="choose">
-                            <p:fileUpload class="campo"  listener="#{artistaController.handleFileUpload}" mode="advanced" dragDropSupport="false" allowTypes="/(\.|\/)(jpg|jpeg|png)$/" />
-                        </div>
-                        <br/><br/>
-                        <p:commandButton class="boton" actionListener="#{artistaController.enviar(artistaController.fecha_nac)}" update="growl" value="Enviar datos"/>
->>>>>>> 5a48c5e21e4fc0c2b13feaddd5be97ddcb4d8433
                     </h:form>
-
                 </div>
             </fieldset>          
         </div>
