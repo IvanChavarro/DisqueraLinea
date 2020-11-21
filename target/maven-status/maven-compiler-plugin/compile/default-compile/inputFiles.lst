@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\ivan_\OneDrive\Documentos\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\pojo\RegistroUserPojo.java
 C:\Users\ivan_\OneDrive\Documentos\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\controller\CrearAlbumController.java
 C:\Users\ivan_\OneDrive\Documentos\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\services\Insert.java
@@ -13,3 +14,18 @@ C:\Users\ivan_\OneDrive\Documentos\NetBeansProjects\ProyectoFinalLinea1\src\main
 C:\Users\ivan_\OneDrive\Documentos\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\pojo\FiltroSeguridad.java
 C:\Users\ivan_\OneDrive\Documentos\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\services\Conexion.java
 C:\Users\ivan_\OneDrive\Documentos\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\controller\ArtistaController.java
+=======
+C:\Users\Karen\Documents\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\controller\IndexController.java
+C:\Users\Karen\Documents\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\services\Insert.java
+C:\Users\Karen\Documents\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\pojo\ArtistaPojo.java
+C:\Users\Karen\Documents\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\services\Conexion.java
+C:\Users\Karen\Documents\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\controller\ArtistaController.java
+C:\Users\Karen\Documents\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\pojo\RegistroUserPojo.java
+C:\Users\Karen\Documents\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\controller\LoginController.java
+C:\Users\Karen\Documents\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\controller\RegistroUserController.java
+C:\Users\Karen\Documents\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\pojo\ConexionBaseDatos.java
+C:\Users\Karen\Documents\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\controller\CrearAlbumController.java
+C:\Users\Karen\Documents\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\controller\ImageView.java
+C:\Users\Karen\Documents\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\pojo\LoginPojo.java
+C:\Users\Karen\Documents\NetBeansProjects\ProyectoFinalLinea1\src\main\java\com\mycompany\proyectofinallinea1\pojo\CrearAlbumPojo.java
+>>>>>>> 10afdaff0d007be5de5ebbb36c4c1b7fdac99b91

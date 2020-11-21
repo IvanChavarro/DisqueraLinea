@@ -4,36 +4,147 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Artista</title>
     </h:head>
-    <h:body>
-        <h:form id="growl" enctype="multipart/form-data">
+    <!--Estilos-->
+    <style>
+        .cuerpo{
+            background-image: url(resources/images/fondos/pexels-spencer-selover-775414.jpg);
+            background-position:top center;
+            position: absolute;
+            background-size: cover;/*imagen mas ajustada*/
+            height: 10px;/*100 de alto*/
+        }
+        .titulo{
+            background-image: url(resources/images/iconos/logo.png);
+            background-size: cover;/*imagen mas ajustada*/
+            position: absolute;
+            margin-left: 100px;
+            padding-left: 194px;
+            width: 25px;
+            height: 175px;/*100 de alto*/
+        }
+        .menu{
+            margin-left: 200px;
+            margin-top: 70px;
+            padding-left: 100px;
+            width: 500px;
+            font-size: 20px;
+            background-color:   rgb(231, 101, 14);
+            text-transform: uppercase;
+            font-family: 'PT Sans', sans-serif;
+            color: black;
+            font-weight: bold;
+        }
+        .contenedor{
 
-            <br></br><br></br>
-            <div>
-                <span class="ui-float-label">
-                    <p:inputText id="Nombre" value="#{artistaController.nombre}" />
-                    <p:outputLabel for="@previous" value="Nombre" />
-                </span>    
-            </div>
-            <br></br><br></br>
-            <div>
-                <span class="ui-float-label">
-                    <p:inputText id="Nacionalidad" value="#{artistaController.nacionalidad}" />
-                    <p:outputLabel for="@previous" value="Nacionalidad" />
-                </span>    
-            </div>
-            <br></br><br></br>
-            <div>
-                <p:outputLabel for="spanish" value="Fecha de nacimiento:  " />
-                <p:calendar id="spanish" value="#{artistaController.fecha_nac}"/>
-            </div>
-            <br></br><br></br>
+            float: left;
+            margin-top: 170px;
+            margin-left: 200px;
+            padding-left: 30px;
+            
+        }
+        .margen{
+            background-color: rgba(153, 58, 11, 0.87);
+            padding-bottom: 80px;
+        }
+        .tittle{
+            text-align: center;
+            padding: 15px;
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-top: 100px;
+            font-size: 30px;
+            font-weight: bold;
+            color: #ffffff;
+            border: #fe4918;
+        }
+        .boton{
+            text-decoration: none;
+            padding-left: 20px;
+            font-family: helvetica;
+            font-weight: 300;
+            font-size: 22px;
+            font-style: italic;
+            color: #1d0b02;
+            background-color: #692807;
+            border-radius: 15px;
+            border: 3px double #ee5b11;
+        }
+        .choose{
+            padding-left: 10px;
+            margin-left: 10px;
+        }
+        .menuDos{
+            float: left;
+            margin-top: 240px;
+            margin-left: 100px;
 
-            <p:fileUpload listener="#{artistaController.handleFileUpload}" mode="advanced" dragDropSupport="false" allowTypes="/(\.|\/)(jpg|jpeg|png)$/" />
-            <p:commandButton actionListener="#{artistaController.enviar(artistaController.fecha_nac)}" update="growl" value="Enviar datos"/>
-        </h:form>
-        
+        }
+        .ui-panelmenu .ui-panelmenu-header {
+            background-color: #ee5b11;
+        }
+    </style>
+    <h:body class="cuerpo">
+        <div class="titulo">
+            <p:megaMenu class="menu">
+                <p:menuitem value="Inicio"  url="#" />
+                <p:menuitem value="Registro" url="#{indexController.registro()}" />
+                <p:menuitem value="Nosotros" url="#" />
+            </p:megaMenu>
+        </div>
+        <div class="menuDos">
+            <h:form>
+                <p:panelMenu class="dos">
+                    <p:submenu label="Crear Artista">
+                        <p:menuitem value="Crear Artista" action="#"/>
+                    </p:submenu>
+                    <p:submenu label="Crear Discos">
+                        <p:menuitem value="Agregar Discos" action="#" />
+                    </p:submenu>
+                    <p:submenu label="Crear Canciones" >
+                        <p:menuitem value="Agregar Canciones" action="#"  />
+                    </p:submenu>
+                    <p:submenu label="Grafica" >
+                        <p:menuitem value="Ver Grafica De Ventas" action="#"  />
+                    </p:submenu>
+                </p:panelMenu>
+            </h:form>
+        </div> 
+        <!--formulario-->
+        <div class="contenedor">
+            <fieldset class="margen">
+                <legend class="tittle">Crear artista</legend>
+                <p:separator class="separador"/>
+                <br/><br/>
+                <div class="contenido">
+                    <h:form id="growl" >
+                        <div>
+                            <p:outputLabel value="Nombre: "/>   
+                            <p:inputText id="Nombre" value="#{artistaController.nombre}" />
+                        </div>
+                        <br/>
+                        <div>
+                            <p:outputLabel value="Nacionalidad: " />
+                            <p:inputText id="Nacionalidad" value="#{artistaController.nacionalidad}" />
+                        </div>
+                        <br/>
+                        <div>
+                            <p:outputLabel for="spanish" value="Fecha de nacimiento:  " />
+                            <p:calendar id="spanish" value="#{artistaController.fecha_nac}"/>
+                        </div>
+                        <br/><br/>
+                        <div class="choose">
+                            <p:fileUpload listener="#{artistaController.handleFileUpload}" mode="advanced" dragDropSupport="false" allowTypes="/(\.|\/)(jpg|jpeg|png)$/" />
+                        </div>
+                        <br/><br/>
+                        <p:commandButton class="boton" actionListener="#{artistaController.enviar(artistaController.fecha_nac)}" update="growl" value="Enviar datos"/>
+                    </h:form>
+                </div>
+            </fieldset>          
+        </div>
+
+
     </h:body>
 </html>
 
