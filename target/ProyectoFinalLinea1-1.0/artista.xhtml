@@ -5,6 +5,8 @@
       xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Artista</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Finger+Paint" rel="stylesheet"></link>
     </h:head>
     <!--Estilos-->
     <style>
@@ -32,21 +34,23 @@
             font-size: 20px;
             background-color:   rgb(231, 101, 14);
             text-transform: uppercase;
-            font-family: 'PT Sans', sans-serif;
             color: black;
             font-weight: bold;
         }
         .contenedor{
-
             float: left;
-            margin-top: 170px;
-            margin-left: 200px;
-            padding-left: 30px;
-            
+            margin-top: 160px;
+            margin-left: 170px;
+            padding-right:  90px;
+            padding-bottom: 40px;
+            text-transform: uppercase;
+            font-family: 'Finger Paint', cursive;
         }
         .margen{
             background-color: rgba(153, 58, 11, 0.87);
-            padding-bottom: 80px;
+            padding-bottom: 30px;
+            float:right;
+
         }
         .tittle{
             text-align: center;
@@ -61,8 +65,8 @@
         }
         .boton{
             text-decoration: none;
-            padding-left: 20px;
-            font-family: helvetica;
+            margin-left: 130px;
+            font-family: 'Finger Paint';
             font-weight: 300;
             font-size: 22px;
             font-style: italic;
@@ -70,6 +74,7 @@
             background-color: #692807;
             border-radius: 15px;
             border: 3px double #ee5b11;
+            
         }
         .choose{
             padding-left: 10px;
@@ -79,10 +84,22 @@
             float: left;
             margin-top: 240px;
             margin-left: 100px;
-
         }
         .ui-panelmenu .ui-panelmenu-header {
             background-color: #ee5b11;
+            font-family: 'Finger Paint';
+            font-weight: bold;   
+        }
+        .ui-menuitem-text{
+            font-family: 'Finger Paint';
+            font-weight: bold; 
+        }   
+        .campo{
+            border-radius: 5px;
+        }
+        .texto{
+            font-family: 'Finger Paint';
+            font-weight: bold;   
         }
     </style>
     <h:body class="cuerpo">
@@ -95,11 +112,11 @@
         </div>
         <div class="menuDos">
             <h:form>
-                <p:panelMenu class="dos">
+                <p:panelMenu>
                     <p:submenu label="Crear Artista">
                         <p:menuitem value="Crear Artista" action="#"/>
                     </p:submenu>
-                    <p:submenu label="Crear Discos">
+                    <p:submenu  label="Crear Discos">
                         <p:menuitem value="Agregar Discos" action="#" />
                     </p:submenu>
                     <p:submenu label="Crear Canciones" >
@@ -120,22 +137,22 @@
                 <div class="contenido">
                     <h:form id="growl" >
                         <div>
-                            <p:outputLabel value="Nombre: "/>   
-                            <p:inputText id="Nombre" value="#{artistaController.nombre}" />
+                            <p:outputLabel class="texto" value="Nombre: "/>   
+                            <p:inputText class="campo"  id="Nombre" value="#{artistaController.nombre}" />
                         </div>
                         <br/>
                         <div>
-                            <p:outputLabel value="Nacionalidad: " />
-                            <p:inputText id="Nacionalidad" value="#{artistaController.nacionalidad}" />
+                            <p:outputLabel class="texto" value="Nacionalidad: " />
+                            <p:inputText class="campo"  id="Nacionalidad" value="#{artistaController.nacionalidad}" />
                         </div>
                         <br/>
                         <div>
-                            <p:outputLabel for="spanish" value="Fecha de nacimiento:  " />
-                            <p:calendar id="spanish" value="#{artistaController.fecha_nac}"/>
+                            <p:outputLabel class="texto" for="spanish" value="Fecha de nacimiento:  " />
+                            <p:calendar class="campo"  id="spanish" value="#{artistaController.fecha_nac}"/>
                         </div>
                         <br/><br/>
                         <div class="choose">
-                            <p:fileUpload listener="#{artistaController.handleFileUpload}" mode="advanced" dragDropSupport="false" allowTypes="/(\.|\/)(jpg|jpeg|png)$/" />
+                            <p:fileUpload class="campo"  listener="#{artistaController.handleFileUpload}" mode="advanced" dragDropSupport="false" allowTypes="/(\.|\/)(jpg|jpeg|png)$/" />
                         </div>
                         <br/><br/>
                         <p:commandButton class="boton" actionListener="#{artistaController.enviar(artistaController.fecha_nac)}" update="growl" value="Enviar datos"/>
