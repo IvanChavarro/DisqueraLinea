@@ -107,9 +107,11 @@
                 <h:form>
                     <p:growl id="growl"  />
                     <p:outputLabel for="nombre" value="Nombre: "/>
+                    <br/><br/>
                     <p:inputText class="campo" id="nombre" value="#{loginController.usuario}" required="true"/>  
                     <br></br><br></br><br></br>                    
                     <p:outputLabel for="password" value="Password: "/>
+                    <br/><br/>
                     <p:inputText class="campo" id="password" value="#{loginController.pass}" type="password" required="true"/> 
                     <br/><br/><br/>
                     <p:commandButton class="boton" value="Enviar" id="ajax" update="growl" action="#{loginController.login()}"/>
