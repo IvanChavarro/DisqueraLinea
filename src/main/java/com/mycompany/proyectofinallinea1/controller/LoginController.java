@@ -37,7 +37,7 @@ public class LoginController {
         LoginPojo loginPojo = new LoginPojo();
         System.out.println("El usuario es: " + usuario);
         if (loginPojo.traeDatos(usuario, pass).equalsIgnoreCase("Admin")) {
-            FacesContext.getCurrentInstance().getExternalContext().redirect("faces/administrador.xhtml");
+            FacesContext.getCurrentInstance().getExternalContext().redirect("../faces/seguridad/administrador.xhtml");
         } else if (loginPojo.traeDatos(usuario, pass).equalsIgnoreCase("Comprador")) {
             FacesContext.getCurrentInstance().getExternalContext().redirect("faces/index.xhtml");
         } else {

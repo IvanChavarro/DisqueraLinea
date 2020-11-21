@@ -1,11 +1,13 @@
 com\mycompany\proyectofinallinea1\pojo\ConexionBaseDatos.class
 com\mycompany\proyectofinallinea1\controller\ArtistaController.class
+com\mycompany\proyectofinallinea1\pojo\FiltroSeguridad.class
 com\mycompany\proyectofinallinea1\pojo\ArtistaPojo.class
 com\mycompany\proyectofinallinea1\pojo\LoginPojo.class
 com\mycompany\proyectofinallinea1\services\Insert.class
 com\mycompany\proyectofinallinea1\pojo\RegistroUserPojo.class
 com\mycompany\proyectofinallinea1\controller\LoginController.class
 com\mycompany\proyectofinallinea1\pojo\CrearAlbumPojo.class
+com\mycompany\proyectofinallinea1\controller\AdministradorController.class
 com\mycompany\proyectofinallinea1\controller\ImageView.class
 com\mycompany\proyectofinallinea1\controller\CrearAlbumController.class
 com\mycompany\proyectofinallinea1\controller\IndexController.class

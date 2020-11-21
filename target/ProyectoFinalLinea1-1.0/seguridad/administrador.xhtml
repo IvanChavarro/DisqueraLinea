@@ -9,14 +9,14 @@
     <!--Estilos-->
     <style>
         .cuerpo{
-            background-image: url(resources/images/fondos/pexels-spencer-selover-775414.jpg);
+            background-image: url(../resources/images/fondos/pexels-spencer-selover-775414.jpg);
             background-position:top center;
             position: absolute;
             background-size: cover;/*imagen mas ajustada*/
             height: 10px;/*100 de alto*/
         }
         .titulo{
-            background-image: url(resources/images/iconos/logo.png);
+            background-image: url(../resources/images/iconos/logo.png);
             background-size: cover;/*imagen mas ajustada*/
             position: absolute;
             margin-left: 100px;
@@ -64,7 +64,7 @@
             <h:form>
                 <p:panelMenu class="dos">
                     <p:submenu label="Crear Artista">
-                        <p:menuitem value="Crear Artista" action="#"/>
+                        <p:menuitem value="Crear Artista" action="#{administradorController.registraArtista()}"/>
                     </p:submenu>
                     <p:submenu label="Crear Discos">
                         <p:menuitem value="Agregar Discos" action="#" />
