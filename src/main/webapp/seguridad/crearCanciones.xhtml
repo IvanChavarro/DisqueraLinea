@@ -5,26 +5,191 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Crear artista</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Finger+Paint" rel="stylesheet"></link>
+        <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Miltonian+Tattoo" rel="stylesheet"></link>
     </h:head>
-    <h:body>
-        <h:form>
-            <h:panelGrid id="grid" columns="3" cellpadding="5">
-                <p:outputLabel for="Nombre" value="Nombre de la canción"/>
-                <p:inputText value="#{crearCancionesController.nombreCancion}" required="true" id="Nombre"/>
-                <p:message for="Nombre" display="Nombre"/>
-                
-                <p:outputLabel for="costo" value="Precio"/>
-                <p:inputText value="#{crearCancionesController.precio}" id="costo" required="true"/>
-                <p:message for="costo" display="Costo"/>
+    <!--Estilos-->
+    <style>
+        .cuerpo{
+            background-image: url(../resources/images/fondos/pexels-spencer-selover-775414.jpg);
+            background-position:top center;
+            background-size: cover;/*imagen mas ajustada*/
+        }
+        /*logo*/
+        .titulo{
+            background-image: url(../resources/images/iconos/logo.png);
+            background-size: cover;/*imagen mas ajustada*/
+            position: top;
+            margin-left: 100px;
+            padding-left: 194px;
+            width: 30px;
+            height: 180px;/*100 de alto*/
+        }
+        /*Diseño menu principal*/
+        .menuPrincipal{
+            float: center;
+            margin-left: 150px;
+            padding-left: 100px;
+            width:500px;
+            font-size: 20px;
+            background-color: rgb(231, 101, 14);
+            text-transform: uppercase;
+            color: black;
+            font-weight: bold;
+            top: 60px;
+        }
+        .ui-menu .ui-menuitem-link {
+            border: solid 3px #c17323e0;
+            margin:2px;
+            color: black; 
+        }
+        .ui-menuitem-text{
+            font-family: 'Finger Paint';
+            font-weight: bold; 
+        }
+        /*diseño de la margen y su contenido*/
+        .contenedor{
+            position: absolute;
+            padding-left:  310px;
+            padding-bottom: 30px;
+            color: white;
+        }
+        .margen{
+            background-color: rgba(153, 58, 11, 0.87);
+            padding-bottom: 30px;
+            float:right;
+        }
+        .contenido{
+            text-align: justify;
+            float: right;
+            padding: 2px;
+        }
+        /*Diseño del titulo*/
+        .tittle{
+            text-align: center;
+            padding: 15px;
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-top: 100px;
+            font-size: 30px;
+            font-weight: bold;
+            color: #ffffff;
+            border: #fe4918;
+            font-family: 'Miltonian Tattoo';
+        }
+        /*Diseño del boton*/
+        .boton{
+            text-decoration: none;
+            margin-left: 160px;
+            font-family: 'Finger Paint';
+            font-weight: 300;
+            font-size: 22px;
+            font-style: italic;
+            color: #1d0b02;
+            background-color: #692807;
+            border-radius: 15px;
+            border: 3px double #ee5b11;
+        }
+        /*Diseño de menu dos*/
+        .menuDos{
+            float: left;
+            margin-top: 80px;
+            margin-left: 80px;
+        }
+        .ui-panelmenu .ui-panelmenu-header {
+            background-color: #ee5b11;
+            font-family: 'Finger Paint';
+            font-weight: bold;   
+        }
+        /* diseño caja de texto*/
+        .ui-inputfield, .ui-widget-content .ui-inputfield, .ui-widget-header .ui-inputfield {
+            border-radius: 7px;
+            background: transparent;
+            color: #ffffff;
+        }
+        .ui-fileupload ui-widget ui-fileupload-responsive campo{
+            background: #822502d6;
+            color: #ffffff;
+        }
+        .campo{
+            border-radius: 7px;
+            background: #822502d6;
+            color: #ffffff;
+        }
+        /*diseño label*/
+        .texto{
+            font-family: 'Finger Paint';
+            font-weight: bold;   
+        }
+        /*diseño de los mensajes*/
+        .mensaje{
+            background: transparent;
+            color: wheat;
+        }
+        /*barra del contenedor*/
+        .menu {
+            background: #822502d6;
+            border-radius: 7px;
+        }
+    </style>
+    <h:body class="cuerpo">
+        <div class="titulo">
+            <p:megaMenu class="menuPrincipal">
+                <p:menuitem value="Inicio"  url="#" />
+                <p:menuitem value="Nosotros" url="#" />
+                <p:menuitem value="Cerrar sesion" url="#" />
+            </p:megaMenu>
+        </div>  
+        <!--menu artistas-->
+        <div class="menuDos">
+            <h:form>
+                <p:panelMenu>
+                    <p:submenu label="Crear Artista">
+                        <p:menuitem value="Crear Artista" action="#"/>
+                    </p:submenu>
+                    <p:submenu  label="Crear Discos">
+                        <p:menuitem value="Agregar Discos" action="#" />
+                    </p:submenu>
+                    <p:submenu label="Crear Canciones" >
+                        <p:menuitem value="Agregar Canciones" action="#"  />
+                    </p:submenu>
+                    <p:submenu label="Grafica" >
+                        <p:menuitem value="Ver Grafica De Ventas" action="#"  />
+                    </p:submenu>
+                </p:panelMenu>
+            </h:form>
+        </div> 
+        <!--formulario-->
+        <div class="contenedor">
+            <fieldset class="margen">
+                <legend class="tittle">Crear Album</legend>
+                <p:separator class="separador"/>
+                <br/><br/>
+                <div class="contenido">
+                    <h:form>
+                        <h:panelGrid id="grid" columns="3" cellpadding="5">
+                            <p:outputLabel class="texto" for="Nombre" value="Nombre de la canción: "/>
+                            <p:inputText class="campo" value="#{crearCancionesController.nombreCancion}" required="true" id="Nombre"/>
+                            <p:message class="mensaje" for="Nombre" display="Nombre"/>
 
-                <p:outputLabel for="MenuComboBox"/>
-                <h:selectOneMenu id="MenuComboBox" value="#{crearCancionesController.albumSeleccionado}" class="menu">
-                    <f:selectItems value="#{crearCancionesController.lista}"/>
-                </h:selectOneMenu>
-            </h:panelGrid>
-            <p:commandButton update="grid" value="Agregar" actionListener="#{crearCancionesController.enviar()}"/>
-        </h:form>
+                            <p:outputLabel class="texto"  for="costo" value="Precio: "/>
+                            <p:inputText class="campo" value="#{crearCancionesController.precio}" id="costo" required="true"/>
+                            <p:message class="mensaje" for="costo" display="Costo"/>
+
+                            <p:outputLabel class="texto" value="Nombre del Album: " for="MenuComboBox"/>
+                            <h:selectOneMenu id="MenuComboBox" value="#{crearCancionesController.albumSeleccionado}" class="menu">
+                                <f:selectItems class="campo" value="#{crearCancionesController.lista}"/>
+                            </h:selectOneMenu>
+                        </h:panelGrid>
+                        <p:commandButton class="boton" update="grid" value="Agregar" actionListener="#{crearCancionesController.enviar()}"/>
+                    </h:form>
+                </div>
+            </fieldset>          
+        </div>
+
     </h:body>
 </html>
 

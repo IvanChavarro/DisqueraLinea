@@ -4,79 +4,85 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Login</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Finger+Paint" rel="stylesheet"></link>
+        <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Miltonian+Tattoo" rel="stylesheet"></link>
     </h:head>
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
         .cuerpo{
-            background-image: url(resources/images/fondos/pexels-spencer-selover-775414.jpg);
+            background-image: url(../resources/images/fondos/pexels-spencer-selover-775414.jpg);
             background-position:top center;
-            position: absolute;
             background-size: cover;/*imagen mas ajustada*/
-            height: 10px;/*100 de alto*/
         }
+        /*logo*/
         .titulo{
-            background-image: url(resources/images/iconos/logo.png);
+            background-image: url(../resources/images/iconos/logo.png);
             background-size: cover;/*imagen mas ajustada*/
-            position: absolute;
+            position: top;
             margin-left: 100px;
-            padding-left: 179px;
-            width: 40px;
-            height: 175px;/*100 de alto*/
+            padding-left: 194px;
+            width: 30px;
+            height: 180px;/*100 de alto*/
         }
+        /*Diseño menu principal*/
         .menu{
-            margin-left: 200px;
-            margin-top: 70px;
+            float: center;
+            margin-left: 150px;
             padding-left: 100px;
-            width: 500px;
+            width:500px;
             font-size: 20px;
-            background-color:   rgb(231, 101, 14);
+            background-color: rgb(231, 101, 14);
             text-transform: uppercase;
-            font-family: 'PT Sans', sans-serif;
             color: black;
             font-weight: bold;
+            top: 60px;
         }
-        .separador{
-            background:  black;
+        .ui-menu .ui-menuitem-link {
+            border: solid 3px #c17323e0;
+            margin:2px;
+            color: black; 
+        }
+        .ui-menuitem-text{
+            font-family: 'Finger Paint';
+            font-weight: bold; 
+        }
+        /*diseño de la margen y su contenido*/
+        .contenedor{
+            position: absolute;
+            padding-left:  440px;
+            padding-bottom: 30px;
+            color: white;
         }
         .margen{
             background-color: rgba(153, 58, 11, 0.87);
-            margin-top: 120px;
-            margin-left: 330px;
-            margin-right: 300px;
-            padding-left: 200px;
-            padding-right: 190px;
-            padding-bottom: 80px;
+            padding-bottom: 30px;
+            float:right;
         }
+        .contenido{
+            text-align: justify;
+            float: center;
+            padding: 70px;
+        }
+        /*Diseño del titulo*/
         .tittle{
             text-align: center;
             padding: 15px;
             padding-left: 50px;
             padding-right: 50px;
-            padding-top: 180px;
-            font-size: 40px;
+            padding-top: 100px;
+            font-size: 45px;
             font-weight: bold;
             color: #ffffff;
             border: #fe4918;
+            font-family: 'Miltonian Tattoo';
         }
-        .contenido{
-            display: block;
-            margin: 0 auto;
-            text-align: center;
-            padding-top: 70px;
-            padding-bottom: 20px;
-            color: #ffffff;
-            text-transform: uppercase;
-        }
+        /*Diseño del boton*/
         .boton{
             text-decoration: none;
-            padding: 2px;
-            padding-left: 7px;
-            padding-right: 7px;
-            font-family: helvetica;
+            margin-left: 60px;
+            font-family: 'Finger Paint';
             font-weight: 300;
             font-size: 22px;
             font-style: italic;
@@ -85,8 +91,20 @@
             border-radius: 15px;
             border: 3px double #ee5b11;
         }
+        /* diseño caja de texto*/
         .campo{
-            border-radius: 5px;
+            border-radius: 7px;
+            background: #822502d6;
+            color: #ffffff;
+        }
+        /*diseño label*/
+        .texto{
+            font-family: 'Finger Paint';
+            font-weight: bold;  
+            color: wheat;
+        }
+        .ui-float-label>label{
+            color: #f7f7f7;
         }
     </style>
     <h:body class="cuerpo">
@@ -99,25 +117,29 @@
             </p:megaMenu>
         </div>
         <!--formulario-->
-        <fieldset class="margen">
-            <legend class="tittle">Login</legend>
-            <br/>
-            <p:separator class="separador"/>
-            <div class="contenido">
-                <h:form>
-                    <p:growl id="growl"  />
-                    <p:outputLabel for="nombre" value="Username "/>
-                    <br/><br/>
-                    <p:inputText class="campo" id="nombre" value="#{loginController.usuario}" required="true"/>  
-                    <br></br><br></br><br></br>                    
-                    <p:outputLabel for="password" value="Password: "/>
-                    <br/><br/>
-                    <p:inputText class="campo" id="password" value="#{loginController.pass}" type="password" required="true"/> 
-                    <br/><br/><br/>
-                    <p:commandButton class="boton" value="Enviar" id="ajax" update="growl" action="#{loginController.login()}"/>
-                </h:form>
-            </div>
-        </fieldset>
+        <div class="contenedor">
+            <fieldset class="margen">
+                <legend class="tittle">Login</legend>
+                <p:separator class="separador"/>
+                <div class="contenido">
+                    <h:form>
+                        <p:growl id="growl"  />
+                        <span class="ui-float-label">
+                            <p:inputText class="campo" id="Nombre" value="#{loginController.usuario}" />
+                            <p:outputLabel class="texto" for="@previous" value="Nombre:" />
+                        </span> 
+                        <br></br><br></br><br></br>   
+                        <span class="ui-float-label">
+                            <p:inputText class="campo" id="contraseeña" value="#{loginController.pass}" />
+                            <p:outputLabel class="texto" for="@previous" value="Contraseña:" />
+                        </span> 
+                        <br/><br/><br/><br/>
+                        <p:commandButton class="boton" value="Enviar" id="ajax" update="growl" action="#{loginController.login()}"/>
+                    </h:form>
+                </div>
+            </fieldset>          
+        </div>
+
     </h:body>
 </html>
 

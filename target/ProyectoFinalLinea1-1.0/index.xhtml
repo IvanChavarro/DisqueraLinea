@@ -5,43 +5,51 @@
       xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Disco Tienda</title>
-
+        <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Finger+Paint" rel="stylesheet"></link>
         <h:outputStylesheet name="primeicons/primeicons.css" library="primefaces" />
     </h:head>
     <!--Estilos-->
     <style>
         .cuerpo{
-            width: 100%;
-            background-image: url(resources/images/fondos/pexels-spencer-selover-775414.jpg);
+            background-image: url(../resources/images/fondos/pexels-spencer-selover-775414.jpg);
             background-position:top center;
-            position: absolute;
             background-size: cover;/*imagen mas ajustada*/
-            height: 10px;/*100 de alto*/
         }
+        /*logo*/
         .titulo{
-            background-image: url(resources/images/iconos/logo.png);
+            background-image: url(../resources/images/iconos/logo.png);
             background-size: cover;/*imagen mas ajustada*/
-            position: absolute;
+            position: top;
             margin-left: 100px;
-            padding-left: 179px;
-            width: 40px;
-            height: 175px;/*100 de alto*/
+            padding-left: 194px;
+            width: 30px;
+            height: 180px;/*100 de alto*/
         }
+        /*Diseño menu principal*/
         .menu{
-            margin-left: 200px;
-            margin-top: 70px;
+            float: center;
+            margin-left: 150px;
             padding-left: 100px;
-            width: 500px;
+            width:500px;
             font-size: 20px;
-            background-color:   rgb(231, 101, 14);
+            background-color: rgb(231, 101, 14);
             text-transform: uppercase;
-            font-family: 'PT Sans', sans-serif;
             color: black;
             font-weight: bold;
+            top: 60px;   
+        }
+        .ui-menu .ui-menuitem-link {
+            border: solid 3px #c17323e0;
+            margin:2px;
+            color: black; 
+        }
+        .ui-menuitem-text{
+            font-family: 'Finger Paint';
+            font-weight: bold; 
         }
     </style>
     <h:body class="cuerpo">
-
         <div class="titulo">
             <p:megaMenu class="menu">
                 <p:menuitem class="inicio" value="Inicio"  url="#" />

@@ -7,59 +7,87 @@
         <title>Artista</title>
         <link rel="preconnect" href="https://fonts.gstatic.com"></link>
         <link href="https://fonts.googleapis.com/css2?family=Finger+Paint" rel="stylesheet"></link>
+        <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Miltonian+Tattoo" rel="stylesheet"></link>
     </h:head>
     <!--Estilos-->
     <style>
         .cuerpo{
             background-image: url(../resources/images/fondos/pexels-spencer-selover-775414.jpg);
             background-position:top center;
-            position: absolute;
             background-size: cover;/*imagen mas ajustada*/
-            height: 10px;/*100 de alto*/
         }
+        /*logo*/
         .titulo{
             background-image: url(../resources/images/iconos/logo.png);
             background-size: cover;/*imagen mas ajustada*/
-            position: absolute;
+            position: top;
             margin-left: 100px;
             padding-left: 194px;
-            width: 25px;
-            height: 175px;/*100 de alto*/
+            width: 30px;
+            height: 180px;/*100 de alto*/
         }
+        /*Diseño menu principal*/
         .menu{
-            margin-left: 200px;
-            margin-top: 70px;
+            float: center;
+            margin-left: 150px;
             padding-left: 100px;
-            width: 500px;
+            width:500px;
             font-size: 20px;
-            background-color:   rgb(231, 101, 14);
+            background-color: rgb(231, 101, 14);
             text-transform: uppercase;
             color: black;
             font-weight: bold;
+            top: 70px;
+            text-align: center;
         }
+        .ui-menu .ui-menuitem-link {
+            border: solid 3px #c17323e0;
+            margin:2px;
+            color: black; 
+        }
+        .ui-menuitem-text{
+            font-family: 'Finger Paint';
+            font-weight: bold; 
+        } 
+        /*diseño de la margen y su contenido*/
         .contenedor{
-            float: left;
+            position: absolute;
+            padding-left:  310px;
+            padding-bottom: 30px;
+            color: white;
         }
         .margen{
             background-color: rgba(153, 58, 11, 0.87);
             padding-bottom: 30px;
             float:right;
-
         }
+        .contenido{
+            text-align: justify;
+            float: right;
+            padding: 2px;
+        }
+        .choose{
+            padding-left: 10px;
+            margin-left: 10px;
+        }
+        /*Diseño del titulo*/
         .tittle{
             text-align: center;
             padding: 15px;
             padding-left: 50px;
             padding-right: 50px;
             padding-top: 100px;
-            font-size: 30px;
+            font-size: 45px;
             font-weight: bold;
             color: #ffffff;
             border: #fe4918;
+            font-family: 'Miltonian Tattoo';
         }
+        /*Diseño del boton*/
         .boton{
             text-decoration: none;
-            margin-left: 130px;
+            margin-left: 220px;
             font-family: 'Finger Paint';
             font-weight: 300;
             font-size: 22px;
@@ -68,42 +96,52 @@
             background-color: #692807;
             border-radius: 15px;
             border: 3px double #ee5b11;
-
         }
-        .choose{
-            padding-left: 10px;
-            margin-left: 10px;
-        }
+        /*Diseño de menu dos*/
         .menuDos{
             float: left;
-            margin-top: 240px;
-            margin-left: 100px;
+            margin-top: 80px;
+            margin-left: 80px;
         }
         .ui-panelmenu .ui-panelmenu-header {
             background-color: #ee5b11;
             font-family: 'Finger Paint';
             font-weight: bold;   
         }
-        .ui-menuitem-text{
-            font-family: 'Finger Paint';
-            font-weight: bold; 
-        }   
-        .campo{
-            border-radius: 5px;
+        /* diseño caja de texto*/
+        .ui-inputfield, .ui-widget-content .ui-inputfield, .ui-widget-header .ui-inputfield {
+            border-radius: 7px;
+            background: transparent;
+            color: #ffffff;
         }
+        .ui-fileupload ui-widget ui-fileupload-responsive campo{
+            background: #822502d6;
+            color: #ffffff;
+        }
+        .campo{
+            border-radius: 7px;
+            background: #822502d6;
+            color: #ffffff;
+        }
+        /*diseño label*/
         .texto{
             font-family: 'Finger Paint';
             font-weight: bold;   
+        }
+        /*diseño de los mensajes*/
+        .mensaje{
+            background: transparent;
+            color: wheat;
         }
     </style>
     <h:body class="cuerpo">
         <div class="titulo">
             <p:megaMenu class="menu">
                 <p:menuitem value="Inicio"  url="#" />
-                <p:menuitem value="Registro" url="#{indexController.registro()}" />
                 <p:menuitem value="Nosotros" url="#" />
+                <p:menuitem value="Cerrar sesion" url="#" />
             </p:megaMenu>
-        </div>
+        </div>  
         <div class="menuDos">
             <h:form>
                 <p:panelMenu>
@@ -131,22 +169,20 @@
                 <div class="contenido">
                     <h:form>
                         <h:panelGrid id="grid" columns="3" cellpadding="5">
-                            <p:outputLabel value="Nombre"/>   
-                            <p:inputText id="Nombre" required="true" value="#{artistaController.nombre}" />
-                            <p:message for="Nombre" />
-
-                            <p:outputLabel value="Nacionalidad" />
-                            <p:inputText id="Nacionalidad" required="true"  value="#{artistaController.nacionalidad}" />
-                            <p:message for="Nacionalidad" display="Nacionalidad" />
-
-                            <p:outputLabel for="spanish" value="Fecha de nacimiento:  " />
-                            <p:calendar id="spanish" required="true" value="#{artistaController.fecha_nac}"/>
-                            <p:message for="spanish" display="spanish" />
-
-                            <p:outputLabel for="calendar" value="image" />
-                            <p:fileUpload id="calendar" listener="#{artistaController.handleFileUpload}" mode="advanced" dragDropSupport="false" allowTypes="/(\.|\/)(jpg|jpeg|png)$/" />
-                            <p:message for="calendar" display="calendar"  />
+                            <p:outputLabel class="texto" value="Nombre: "/>   
+                            <p:inputText class="campo" id="Nombre" required="true" value="#{artistaController.nombre}" />
+                            <p:message class="mensaje" for="Nombre" />
+                            <p:outputLabel class="texto" value="Nacionalidad: " />
+                            <p:inputText class="campo" id="Nacionalidad" required="true"  value="#{artistaController.nacionalidad}" />
+                            <p:message class="mensaje" for="Nacionalidad" display="Nacionalidad" />
+                            <p:outputLabel class="texto" for="spanish" value="Fecha de nacimiento:" />
+                            <p:calendar class="campo"  id="spanish" required="true" value="#{artistaController.fecha_nac}"/>
+                            <p:message class="mensaje" for="spanish" display="spanish" />
+                            <p:outputLabel class="texto" for="calendar" value="Imagen: " />
+                            <p:fileUpload class="campo"  id="calendar" listener="#{artistaController.handleFileUpload}" mode="advanced" dragDropSupport="false" allowTypes="/(\.|\/)(jpg|jpeg|png)$/" />
+                            <p:message class="mensaje" for="calendar" display="calendar"  />
                         </h:panelGrid>
+                        <br/><br/>
                         <p:commandButton class="boton" actionListener="#{artistaController.enviar(artistaController.fecha_nac)}" update="grid" value="Enviar datos"/>
                     </h:form>
                 </div>
