@@ -34,19 +34,24 @@ import org.primefaces.model.file.UploadedFile;
  * @author Iván
  */
 @Named(value = "artistaController")
-@SessionScoped
-public class ArtistaController implements Serializable {
+@RequestScoped
+public class ArtistaController {
 
     private UploadedFile file;
     private String nombre, nacionalidad;
     private byte auxDisabled = 0;
     private String message;
     private Date fecha_nac;
-    String so = System.getProperty("os.name");
-    String ruta_temporal = "C://xampp//LineaDeProfundizacion/";
+    String ruta_temporal;
 
     public ArtistaController() {
-
+        this.file = null;
+        this.nombre = null;
+        this.nacionalidad = null;
+        this.auxDisabled = 0;
+        this.message = null;
+        this.fecha_nac = null;
+        this.ruta_temporal = "C://xampp//LineaDeProfundizacion/";
     }
 
     public void handleFileUpload(FileUploadEvent event) {

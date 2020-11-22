@@ -12,13 +12,13 @@
     </h:head>
     <style>
         .cuerpo{
-            background-image: url(../resources/images/fondos/pexels-spencer-selover-775414.jpg);
+            background-image: url(resources/images/fondos/pexels-spencer-selover-775414.jpg);
             background-position:top center;
             background-size: cover;/*imagen mas ajustada*/
         }
         /*logo*/
         .titulo{
-            background-image: url(../resources/images/iconos/logo.png);
+            background-image: url(resources/images/iconos/logo.png);
             background-size: cover;/*imagen mas ajustada*/
             position: top;
             margin-left: 100px;
@@ -130,7 +130,7 @@
                         </span> 
                         <br></br><br></br><br></br>   
                         <span class="ui-float-label">
-                            <p:inputText class="campo" id="contraseeña" value="#{loginController.pass}" />
+                            <p:inputText class="campo" type="password" id="contraseeña" value="#{loginController.pass}" />
                             <p:outputLabel class="texto" for="@previous" value="Contraseña:" />
                         </span> 
                         <br/><br/><br/><br/>

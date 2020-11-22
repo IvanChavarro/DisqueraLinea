@@ -12,13 +12,13 @@
     <!--Estilos-->
     <style>
         .cuerpo{
-            background-image: url(../resources/images/fondos/pexels-spencer-selover-775414.jpg);
+            background-image: url(resources/images/fondos/pexels-spencer-selover-775414.jpg);
             background-position:top center;
             background-size: cover;/*imagen mas ajustada*/
         }
         /*logo*/
         .titulo{
-            background-image: url(../resources/images/iconos/logo.png);
+            background-image: url(resources/images/iconos/logo.png);
             background-size: cover;/*imagen mas ajustada*/
             position: top;
             margin-left: 100px;
@@ -51,12 +51,13 @@
     </style>
     <h:body class="cuerpo">
         <div class="titulo">
-            <p:megaMenu class="menu">
-                <p:menuitem class="inicio" value="Inicio"  url="#" />
-                <p:menuitem class="login" value="Login" url="#{indexController.login()}" />
-                <p:menuitem value="Registro" url="#{indexController.registro()}" />
-                <p:menuitem value="Nosotros" url="#" />
-            </p:megaMenu>
+            <h:form><p:megaMenu class="menu">
+                    <p:menuitem class="inicio" value="Inicio"  url="#" />
+                    <p:menuitem class="login" value="Login" url="#{indexController.login()}" />
+                    <p:menuitem value="Registro" url="#{indexController.registro()}" />
+                    <p:menuitem value="Nosotros" url="#" />
+                </p:megaMenu>
+            </h:form>
         </div>
         <!--Imagenes-->
         <!--div class="banner">

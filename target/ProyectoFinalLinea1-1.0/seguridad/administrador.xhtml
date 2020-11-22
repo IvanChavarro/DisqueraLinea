@@ -9,6 +9,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Finger+Paint" rel="stylesheet"></link>
         <link rel="preconnect" href="https://fonts.gstatic.com"></link>
         <link href="https://fonts.googleapis.com/css2?family=Miltonian+Tattoo" rel="stylesheet"></link>
+        <script src="assets/js/custom.js"></script>
     </h:head>
     <!--Estilos-->
     <style>
@@ -50,13 +51,12 @@
             font-weight: bold; 
         }
         /*diseño de la margen y su contenido*/
-        .contenedor{
-            position: absolute;
+        /*.contenedor{
+            position: relative;
             padding-left:  310px;
-            width: 70%;
-            color: white;
             padding-bottom: 30px;
-        }
+            color: white;
+        }*/
         .margen{
             background-color: rgba(153, 58, 11, 0.87);
             padding-bottom: 170px;
@@ -136,18 +136,21 @@
                 <p:menuitem value="Nosotros" url="#" />
                 <p:menuitem value="Cerrar sesion" url="#" />
             </p:megaMenu>
-        </div>  
+        </div>
         <div class="menuDos">
             <h:form>
                 <p:panelMenu>
-                    <p:submenu label="Crear Artista">
-                        <p:menuitem value="Crear Artista" action="#"/>
+                    <p:submenu label="Artistas">
+                        <p:menuitem value="Crear Artista" action="#{administradorController.registraArtista()}"/>
+                        <p:menuitem value="Artistas Agregados" action="#"/>
                     </p:submenu>
                     <p:submenu  label="Crear Discos">
-                        <p:menuitem value="Agregar Discos" action="#" />
+                        <p:menuitem value="Agregar Discos" action="#{administradorController.registrarAlbum()}" />
+                        <p:menuitem value="Discos Agregados" action="#"/>
                     </p:submenu>
                     <p:submenu label="Crear Canciones" >
-                        <p:menuitem value="Agregar Canciones" action="#"  />
+                        <p:menuitem value="Agregar Canciones" action="#{administradorController.registrarCancion()}"  />
+                        <p:menuitem value="Canciones Agregadas" action="#"/>
                     </p:submenu>
                     <p:submenu label="Grafica" >
                         <p:menuitem value="Ver Grafica De Ventas" action="#"  />

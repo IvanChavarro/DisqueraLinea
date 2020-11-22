@@ -7,8 +7,9 @@ package com.mycompany.proyectofinallinea1.controller;
 
 import com.mycompany.proyectofinallinea1.pojo.LoginPojo;
 import java.io.IOException;
+import java.io.Serializable;
 import javax.inject.Named;
-import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
 
 /**
@@ -16,8 +17,8 @@ import javax.faces.context.FacesContext;
  * @author Iván
  */
 @Named
-@RequestScoped
-public class LoginController {
+@SessionScoped
+public class LoginController implements Serializable{
 
     private String usuario, pass;
 

@@ -22,6 +22,7 @@ public class AdministradorController {
      * Creates a new instance of AdministradorController
      */
     public AdministradorController() {
+        
     }
 
     public void registraArtista() throws IOException {

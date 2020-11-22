@@ -12,13 +12,13 @@
     </h:head>
     <style>
         .cuerpo{
-            background-image: url(../resources/images/fondos/pexels-spencer-selover-775414.jpg);
+            background-image: url(resources/images/fondos/pexels-spencer-selover-775414.jpg);
             background-position:top center;
             background-size: cover;/*imagen mas ajustada*/
         }
         /*logo*/
         .titulo{
-            background-image: url(../resources/images/iconos/logo.png);
+            background-image: url(resources/images/iconos/logo.png);
             background-size: cover;/*imagen mas ajustada*/
             position: top;
             margin-left: 100px;
@@ -123,35 +123,35 @@
                     <h:form id="growl">
                         <div>
                             <span class="ui-float-label">
-                                <p:inputText class="campo" id="nombre" value="#{registroUserController.nombre}" />
+                                <p:inputText class="campo" id="nombre" required="true" value="#{registroUserController.nombre}" />
                                 <p:outputLabel class="texto" for="@previous" value="Nombre:" />
                             </span>    
                         </div>
                         <br></br><br></br>
                         <div>
                             <span class="ui-float-label">
-                                <p:inputText class="campo" id="apellido" value="#{registroUserController.apellido}" />
+                                <p:inputText class="campo" required="true" id="apellido" value="#{registroUserController.apellido}" />
                                 <p:outputLabel class="texto" for="@previous" value="Apellido:" />
                             </span>    
                         </div>
                         <br></br><br></br>
                         <div>
                             <span class="ui-float-label">
-                                <p:inputText class="campo" id="correo" value="#{registroUserController.correo}" />
+                                <p:inputText class="campo" required="true" id="correo" value="#{registroUserController.correo}" />
                                 <p:outputLabel class="texto" for="@previous" value="Correo:" />
                             </span>    
                         </div>
                         <br></br><br></br>
                         <div>
                             <span class="ui-float-label">
-                                <p:inputText class="campo" id="username" value="#{registroUserController.username}" />
+                                <p:inputText class="campo" required="true" id="username" value="#{registroUserController.username}" />
                                 <p:outputLabel class="texto" for="@previous" value="Username:" />
                             </span>    
                         </div>
                         <br></br><br></br>
                         <div>
                             <span class="ui-float-label">
-                                <p:inputText class="campo" id="password" type="password" value="#{registroUserController.password}" />
+                                <p:inputText class="campo" required="true" id="password" type="password" value="#{registroUserController.password}" />
                                 <p:outputLabel class="texto" for="@previous" value="Password:" />
                             </span>    
                         </div>

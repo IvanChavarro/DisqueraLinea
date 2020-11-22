@@ -52,7 +52,7 @@
         }
         /*diseño de la margen y su contenido*/
         .contenedor{
-            position: absolute;
+            position: relative;
             padding-left:  310px;
             padding-bottom: 30px;
             color: white;
@@ -146,15 +146,18 @@
         <!--menu artistas-->
         <div class="menuDos">
             <h:form>
-                <p:panelMenu>
-                    <p:submenu label="Crear Artista">
-                        <p:menuitem value="Crear Artista" action="#"/>
+              <p:panelMenu>
+                    <p:submenu label="Artistas">
+                        <p:menuitem value="Crear Artista" action="#{administradorController.registraArtista()}"/>
+                        <p:menuitem value="Artistas Agregados" action="#"/>
                     </p:submenu>
                     <p:submenu  label="Crear Discos">
-                        <p:menuitem value="Agregar Discos" action="#" />
+                        <p:menuitem value="Agregar Discos" action="#{administradorController.registrarAlbum()}" />
+                        <p:menuitem value="Discos Agregados" action="#"/>
                     </p:submenu>
                     <p:submenu label="Crear Canciones" >
-                        <p:menuitem value="Agregar Canciones" action="#"  />
+                        <p:menuitem value="Agregar Canciones" action="#{administradorController.registrarCancion()}"  />
+                        <p:menuitem value="Canciones Agregadas" action="#"/>
                     </p:submenu>
                     <p:submenu label="Grafica" >
                         <p:menuitem value="Ver Grafica De Ventas" action="#"  />
