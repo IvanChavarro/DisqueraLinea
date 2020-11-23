@@ -5,9 +5,10 @@
  */
 
 package com.mycompany.proyectofinallinea1.controller;
-
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author Karen
@@ -16,13 +17,13 @@ import javax.enterprise.context.RequestScoped;
 @RequestScoped
 public class ImageView {
 
-     /*private List<String> images;
+   /* private List<String> images;
      
     @PostConstruct
     public void init() {
         images = new ArrayList<String>();
-        for (int i = 1; i <= 3; i++) {
-            images.add("banner" + i + ".jpg");
+        for (int i = 1; i <= 12; i++) {
+            images.add("fondos"+ i +".jpg");
         }
     }
  

@@ -2,11 +2,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
         <title>Disco Tienda</title>
         <link rel="preconnect" href="https://fonts.gstatic.com"></link>
         <link href="https://fonts.googleapis.com/css2?family=Finger+Paint" rel="stylesheet"></link>
+        <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Miltonian+Tattoo" rel="stylesheet"></link>
         <h:outputStylesheet name="primeicons/primeicons.css" library="primefaces" />
     </h:head>
     <!--Estilos-->
@@ -48,6 +51,19 @@
             font-family: 'Finger Paint';
             font-weight: bold; 
         }
+        .banner{
+            position: relative;
+        }
+        /*contenido de nosotros*/
+        .text{
+            text-align: center;
+            color: white;
+            margin-top:100px;
+        }
+        .content{
+            font-family: 'Finger Paint';
+            font-size: 20px;
+        }
     </style>
     <h:body class="cuerpo">
         <div class="titulo">
@@ -60,12 +76,13 @@
             </h:form>
         </div>
         <!--Imagenes-->
-        <!--div class="banner">
-            <p:contentFlow value="#" var="image">
-                <p:graphicImage name="/imagenes/banner/#" styleClass="content" />
-            </p:contentFlow>
-        </div-->
-        <!--nosotros-->
+        <div class="banner">
+            <img src="/resources/images/banner/1.jpg "/>    
+        </div>
+        <div class="text">
+            <p:outputLabel class="content" value="Disfruta de esta plataforma 
+                que le permite descargar Discos y Canciones de su interes"/>
+        </div>
 
     </h:body>
 </html>

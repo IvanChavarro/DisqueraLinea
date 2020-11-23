@@ -6,36 +6,227 @@
       xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Artistas Creados</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Finger+Paint" rel="stylesheet"></link>
+        <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Miltonian+Tattoo" rel="stylesheet"></link>
     </h:head>
     <style>
-        .imgaen{
-            width: 300px;
-            height: 300px;
+         .cuerpo{
+            background-image: url(../resources/images/fondos/pexels-spencer-selover-775414.jpg);
+            background-position:top center;
+            background-size: cover;/*imagen mas ajustada*/
+        }
+        /*logo*/
+        .titulo{
+            background-image: url(../resources/images/iconos/logo.png);
+            background-size: cover;/*imagen mas ajustada*/
+            position: top;
+            margin-left: 100px;
+            padding-left: 194px;
+            width: 30px;
+            height: 180px;/*100 de alto*/
+        }
+        /*Diseño menu principal*/
+        .menu{
+            float: center;
+            margin-left: 150px;
+            padding-left: 100px;
+            width:500px;
+            font-size: 20px;
+            background-color: rgb(231, 101, 14);
+            text-transform: uppercase;
+            color: black;
+            font-weight: bold;
+            top: 70px;
+            text-align: center;
+        }
+        .ui-menu .ui-menuitem-link {
+            border: solid 3px #c17323e0;
+            margin:2px;
+            color: black; 
+        }
+        .ui-menuitem-text{
+            font-family: 'Finger Paint';
+            font-weight: bold; 
+        } 
+        /*diseño de la margen y su contenido*/
+        .contenedor{
+            position: relative;
+            padding-left:  310px;
+            padding-bottom: 30px;
+            color: white;
+        }
+        .margen{
+            background-color: rgba(153, 58, 11, 0.87);
+            padding-bottom: 30px;
+            float:right;
+        }
+        .contenido{
+            text-align: justify;
+            float: right;
+            padding: 2px;
+        }
+        .choose{
+            padding-left: 10px;
+            margin-left: 10px;
+        }
+        /*Diseño del titulo*/
+        .tittle{
+            text-align: center;
+            padding: 15px;
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-top: 100px;
+            font-size: 45px;
+            font-weight: bold;
+            color: #ffffff;
+            border: #fe4918;
+            font-family: 'Miltonian Tattoo';
+        }
+        /*Diseño del boton*/
+        .boton{
+            text-decoration: none;
+            margin-left: 220px;
+            font-family: 'Finger Paint';
+            font-weight: 300;
+            font-size: 22px;
+            font-style: italic;
+            color: #1d0b02;
+            background-color: #692807;
+            border-radius: 15px;
+            border: 3px double #ee5b11;
+        }
+        /*Diseño de menu dos*/
+        .menuDos{
+            float: left;
+            margin-top: 80px;
+            margin-left: 80px;
+        }
+        .ui-panelmenu .ui-panelmenu-header {
+            background-color: #ee5b11;
+            font-family: 'Finger Paint';
+            font-weight: bold;   
+        }
+        /* diseño caja de texto*/
+        .ui-inputfield, .ui-widget-content .ui-inputfield, .ui-widget-header .ui-inputfield {
+            border-radius: 7px;
+            background: transparent;
+            color: #ffffff;
+        }
+        .ui-fileupload ui-widget ui-fileupload-responsive campo{
+            background: #822502d6;
+            color: #ffffff;
+        }
+        .campo{
+            border-radius: 7px;
+            background: #822502d6;
+            color: #ffffff;
+        }
+        /*diseño label*/
+        .texto{
+            font-family: 'Finger Paint';
+            font-weight: bold;   
+        }
+        /*diseño de los mensajes*/
+        .mensaje{
+            background: transparent;
+            color: wheat;
+        }
+        /*Tabla*/
+        .tabla{
+            width: 70%;
+            height: 100%;
+            position: relative;
+            float: right;
+            margin-right: 60px;
+            top: 80px;
+            
+        }
+        .ui-datatable .ui-paginator, .ui-datatable .ui-paginator {/*fondo barra*/
+            background-color: rgba(49, 65, 68, 0.96);
+            border: 7px;
+            font-family: 'Miltonian Tattoo';
+        }
+        .ui-paginator .ui-paginator-next .ui-icon, .ui-paginator .ui-paginator-prev .ui-icon, .ui-paginator .ui-paginator-first .ui-icon, .ui-paginator .ui-paginator-last .ui-icon {
+            font-weight: bold;   
+            color: black;
+            border-color: white;
+        }
+        .ui-paginator .ui-paginator-page, .ui-paginator .ui-paginator-next, .ui-paginator .ui-paginator-last, .ui-paginator .ui-paginator-first, .ui-paginator .ui-paginator-prev {
+            background-color: #692807;
+            color: white;
+            border-color: white;
+            font-family: 'Miltonian Tattoo';
+        }
+        .ui-datatable thead th, .ui-datatable tbody td, .ui-datatable tfoot td, .ui-datatable tfoot th {
+         background-color: rgba(244, 93, 6, 0.74);
+         color: black;
+         font-family: 'Finger Paint';
+        }
+        .ui-widget-content ui-datatable-even{
+         background-color: transparent;   
+        }
+        .imgaen img{
+            width: 60%;
+            height: 60%;
+            padding-left: 35px;
         }
     </style>
-    <h:body>
-        <h:form id="form">
-            <p:dataTable value="#{artistasCreadosController.lista}" var="a" paginator="true" rows="5">
+    <!--Cuerpo-->
+    <h:body class="cuerpo">
+        <div class="titulo">
+            <p:megaMenu class="menu">
+                <p:menuitem value="Inicio"  url="#" />
+                <p:menuitem value="Nosotros" url="#" />
+                <p:menuitem value="Cerrar sesion" url="#" />
+            </p:megaMenu>
+        </div>  
+        <!--MEnu numero dos-->
+        <div class="menuDos">
+            <h:form>
+               <p:panelMenu>
+                    <p:submenu label="Artistas">
+                        <p:menuitem value="Crear Artista" action="#{administradorController.registraArtista()}"/>
+                        <p:menuitem value="Artistas Agregados" action="#{administradorController.mostrarArtistas()}"/>
+                    </p:submenu>
+                    <p:submenu  label="Crear Discos">
+                        <p:menuitem value="Agregar Discos" action="#{administradorController.registrarAlbum()}" />
+                        <p:menuitem value="Discos Agregados" action="#"/>
+                    </p:submenu>
+                    <p:submenu label="Crear Canciones" >
+                        <p:menuitem value="Agregar Canciones" action="#{administradorController.registrarCancion()}"  />
+                        <p:menuitem value="Canciones Agregadas" action="#"/>
+                    </p:submenu>
+                    <p:submenu label="Grafica" >
+                        <p:menuitem value="Ver Grafica De Ventas" action="#"  />
+                    </p:submenu>
+                </p:panelMenu>
+            </h:form>
+        </div> 
+        <!--Tabla-->
+        <div class="tabla">
+            <h:form id="form">
+            <p:dataTable value="#" var="a" paginator="true" rows="5">
                 <p:column>
-                    <h:selectBooleanCheckbox value="#{a.selected}" />
+                    <h:selectBooleanCheckbox value="#" />
                 </p:column>
                 <p:column headerText="NOMBRE">
-                    <h:outputText value="#{a.nombre}"/>
+                    <h:outputText value="karen"/>
                 </p:column>
                 <p:column headerText="NACIONALIDAD">
-                    <h:outputText value="#{a.nacionalidad}"/>
+                    <h:outputText value="colombiana"/>
                 </p:column>
                 <p:column headerText="FERCHA DE NACIMIENTO">
-                    <h:outputText value="#{a.fecha_nac}"/>
+                    <h:outputText value="28 junio 99"/>
                 </p:column><p:column headerText="FOTO">
                     <div class="imgaen">
-                        <img src="#{a.foto}"/>    
+                        <img src="../resources/images/fondos/1.jpg "/>    
                     </div>
-
                 </p:column>
             </p:dataTable>
-            <p:commandButton value="Eliminar" actionListener="#{artistasCreadosController.eliminar()}" />
         </h:form>
+        </div>
     </h:body>
 </html>
 
