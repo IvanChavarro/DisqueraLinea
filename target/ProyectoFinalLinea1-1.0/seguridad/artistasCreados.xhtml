@@ -7,113 +7,35 @@
     <h:head>
         <title>Artistas Creados</title>
     </h:head>
-    <style type="text/css">
-        .ui-row-editor .ui-row-editor-pencil {
-            margin-left:8px;
+    <style>
+        .imgaen{
+            width: 300px;
+            height: 300px;
         }
     </style>
     <h:body>
         <h:form id="form">
-    <p:growl id="msgs" showDetail="true"/>
- 
-    <p:dataTable id="cars1" var="car" value="#" editable="true" style="margin-bottom:20px">
-        <f:facet name="header">
-            Row Editing
-        </f:facet>
- 
-        <!--p:ajax event="rowEdit" listener="#" update=":form:msgs" />
-        <p:ajax event="rowEditCancel" listener="#" update=":form:msgs" /-->
- 
-        <p:column headerText="Id">
-            <p:cellEditor>
-                <f:facet name="output"><h:outputText value="#" /></f:facet>
-                <f:facet name="input"><p:inputText id="modelInput" value="#" style="width:100%"/></f:facet>
-            </p:cellEditor>
-        </p:column>
- 
-        <p:column headerText="Year">
-            <p:cellEditor>
-                <f:facet name="output"><h:outputText value="#" /></f:facet>
-                <f:facet name="input"><p:inputText value="#" style="width:100%" label="Year"/></f:facet>
-            </p:cellEditor>
-        </p:column>
- 
-        <p:column headerText="Brand">
-            <p:cellEditor>
-                <f:facet name="output"><h:outputText value="#" /></f:facet>
-                <f:facet name="input">
-                    <h:selectOneMenu value="#" style="width:100%">
-                        <f:selectItems value="#" var="man" itemLabel="#" itemValue="#" />
-                    </h:selectOneMenu>
-                </f:facet>
-            </p:cellEditor>
-        </p:column>
- 
-        <p:column headerText="Color">
-            <p:cellEditor>
-                <f:facet name="output"><h:outputText value="#" /></f:facet>
-                <f:facet name="input">
-                    <h:selectOneMenu value="#" style="width:100%">
-                        <f:selectItems value="#" var="color" itemLabel="#" itemValue="#" />
-                    </h:selectOneMenu>
-                </f:facet>
-            </p:cellEditor>
-        </p:column>
- 
-        <p:column style="width:35px">
-            <p:rowEditor />
-        </p:column>
-    </p:dataTable>
- 
-    <p:dataTable id="cars2" var="car" value="#" editable="true" editMode="cell" widgetVar="cellCars">
-        <f:facet name="header">
-            Cell Editing with Click and RightClick
-        </f:facet>
- 
-        <p:ajax event="cellEdit" listener="#" update=":form:msgs" />
- 
-        <p:column headerText="Id">
-               <p:cellEditor>
-                   <f:facet name="output"><h:outputText value="#" /></f:facet>
-                   <f:facet name="input"><p:inputText id="modelInput" value="#" style="width:96%"/></f:facet>
-               </p:cellEditor>
-           </p:column>
- 
-           <p:column headerText="Year">
-            <p:cellEditor>
-                <f:facet name="output"><h:outputText value="#" /></f:facet>
-                <f:facet name="input"><p:inputText value="#" style="width:96%" label="Year"/></f:facet>
-            </p:cellEditor>
-        </p:column>
- 
-        <p:column headerText="Brand">
-            <p:cellEditor>
-                <f:facet name="output"><h:outputText value="#" /></f:facet>
-                <f:facet name="input">
-                    <h:selectOneMenu value="#" style="width:100%">
-                        <f:selectItems value="#" var="man" itemLabel="#" itemValue="#" />
-                    </h:selectOneMenu>
-                </f:facet>
-            </p:cellEditor>
-        </p:column>
- 
-        <p:column headerText="Color">
-            <p:cellEditor>
-                <f:facet name="output"><h:outputText value="#{car.color}" /></f:facet>
-                <f:facet name="input">
-                    <h:selectOneMenu value="#{car.color}" style="width:100%">
-                        <f:selectItems value="#{dtEditView.colors}" var="color" itemLabel="#{color}" itemValue="#{color}" />
-                    </h:selectOneMenu>
-                </f:facet>
-            </p:cellEditor>
-        </p:column>
-    </p:dataTable>
-     
-    <p:contextMenu for="cars2" widgetVar="cMenu">   
-        <p:menuitem value="Edit Cell" icon="pi pi-search" onclick="PF('cellCars').showCellEditor();return false;"/>  
-        <p:menuitem value="Hide Menu" icon="pi pi-times" onclick="PF('cMenu').hide()"/>  
-    </p:contextMenu> 
- </h:form>
+            <p:dataTable value="#{artistasCreadosController.lista}" var="a" paginator="true" rows="5">
+                <p:column>
+                    <h:selectBooleanCheckbox value="#{a.selected}" />
+                </p:column>
+                <p:column headerText="NOMBRE">
+                    <h:outputText value="#{a.nombre}"/>
+                </p:column>
+                <p:column headerText="NACIONALIDAD">
+                    <h:outputText value="#{a.nacionalidad}"/>
+                </p:column>
+                <p:column headerText="FERCHA DE NACIMIENTO">
+                    <h:outputText value="#{a.fecha_nac}"/>
+                </p:column><p:column headerText="FOTO">
+                    <div class="imgaen">
+                        <img src="#{a.foto}"/>    
+                    </div>
+
+                </p:column>
+            </p:dataTable>
+            <p:commandButton value="Eliminar" actionListener="#{artistasCreadosController.eliminar()}" />
+        </h:form>
     </h:body>
 </html>
 

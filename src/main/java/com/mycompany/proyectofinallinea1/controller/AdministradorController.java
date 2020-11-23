@@ -28,6 +28,10 @@ public class AdministradorController {
     public void registraArtista() throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("../seguridad/artista.xhtml");
     }
+    
+    public void mostrarArtistas() throws IOException{
+        FacesContext.getCurrentInstance().getExternalContext().redirect("../seguridad/artistasCreados.xhtml");
+    }
 
     public void registrarAlbum() throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("../seguridad/crearAlbum.xhtml");

@@ -5,7 +5,6 @@
  */
 package com.mycompany.proyectofinallinea1.pojo;
 
-import com.mycompany.proyectofinallinea1.services.Conexion;
 import com.mycompany.proyectofinallinea1.services.Insert;
 import java.sql.SQLException;
 import java.sql.Statement;

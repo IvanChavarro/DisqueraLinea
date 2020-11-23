@@ -147,7 +147,7 @@
                <p:panelMenu>
                     <p:submenu label="Artistas">
                         <p:menuitem value="Crear Artista" action="#{administradorController.registraArtista()}"/>
-                        <p:menuitem value="Artistas Agregados" action="#"/>
+                        <p:menuitem value="Artistas Agregados" action="#{administradorController.mostrarArtistas()}"/>
                     </p:submenu>
                     <p:submenu  label="Crear Discos">
                         <p:menuitem value="Agregar Discos" action="#{administradorController.registrarAlbum()}" />
@@ -178,12 +178,12 @@
                             <p:outputLabel class="texto" value="Nacionalidad: " />
                             <p:inputText class="campo" id="Nacionalidad" required="true"  value="#{artistaController.nacionalidad}" />
                             <p:message class="mensaje" for="Nacionalidad" display="Nacionalidad" />
-                            <p:outputLabel class="texto" for="spanish" value="Fecha de nacimiento:" />
-                            <p:calendar class="campo"  id="spanish" required="true" value="#{artistaController.fecha_nac}"/>
-                            <p:message class="mensaje" for="spanish" display="spanish" />
-                            <p:outputLabel class="texto" for="calendar" value="Imagen: " />
-                            <p:fileUpload class="campo"  id="calendar" listener="#{artistaController.handleFileUpload}" mode="advanced" dragDropSupport="false" allowTypes="/(\.|\/)(jpg|jpeg|png)$/" />
-                            <p:message class="mensaje" for="calendar" display="calendar"  />
+                            <p:outputLabel class="texto" for="calendar" value="Fecha de nacimiento:" />
+                            <p:calendar class="campo"  id="calendar" required="true" value="#{artistaController.fecha_nac}"/>
+                            <p:message class="mensaje" for="calendar" display="spanish" />
+                            <p:outputLabel class="texto" for="foto" value="Imagen: " />
+                            <p:fileUpload class="campo"  id="foto" listener="#{artistaController.handleFileUpload}" mode="advanced" dragDropSupport="false" allowTypes="/(\.|\/)(jpg|jpeg|png)$/" />
+                            <p:message class="mensaje" for="foto" display="calendar"  />
                         </h:panelGrid>
                         <br/><br/>
                         <p:commandButton class="boton" actionListener="#{artistaController.enviar(artistaController.fecha_nac)}" update="grid" value="Enviar datos"/>

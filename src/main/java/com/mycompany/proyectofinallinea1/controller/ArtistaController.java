@@ -10,23 +10,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.Date;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.annotation.PostConstruct;
 import javax.inject.Named;
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
-import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
-import org.primefaces.PrimeFaces;
 import org.primefaces.event.FileUploadEvent;
-import org.primefaces.event.SelectEvent;
 import org.primefaces.model.file.UploadedFile;
 
 /**
@@ -34,24 +24,18 @@ import org.primefaces.model.file.UploadedFile;
  * @author Iván
  */
 @Named(value = "artistaController")
-@RequestScoped
-public class ArtistaController {
+@SessionScoped
+public class ArtistaController implements Serializable {
 
     private UploadedFile file;
     private String nombre, nacionalidad;
     private byte auxDisabled = 0;
     private String message;
     private Date fecha_nac;
-    String ruta_temporal;
-
+    private String ruta_temporal = "..//LineaDeProfundizacion/";
+    private String ruta = "C://Users//ivan_//OneDrive//Documentos//NetBeansProjects//ProyectoFinalLinea1//src//main//webapp//LineaDeProfundizacion/";
     public ArtistaController() {
-        this.file = null;
-        this.nombre = null;
-        this.nacionalidad = null;
-        this.auxDisabled = 0;
-        this.message = null;
-        this.fecha_nac = null;
-        this.ruta_temporal = "C://xampp//LineaDeProfundizacion/";
+        
     }
 
     public void handleFileUpload(FileUploadEvent event) {
@@ -59,17 +43,19 @@ public class ArtistaController {
         String fileName = uploadedFile.getFileName();
         byte[] contents = uploadedFile.getContent();
         try {
-            this.ruta_temporal += fileName.replace(" ", "");
-            FileOutputStream fos = new FileOutputStream(ruta_temporal);
+            this.ruta += fileName.replace(" ", "");
+            this.ruta_temporal+=fileName.replace(" ", "");
+            FileOutputStream fos = new FileOutputStream(ruta);
             fos.write(contents);
             fos.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 
     public void enviar(Date fecha_nac) {
-        System.out.println("El nombre es " + this.ruta_temporal);
+        System.out.println("La ruta temporal es: " + ruta_temporal);
         SimpleDateFormat formato = new SimpleDateFormat("YYY-MM-dd");
         String fec;
         fec = (formato.format(fecha_nac));
@@ -80,6 +66,9 @@ public class ArtistaController {
         } catch (IOException ex) {
             Logger.getLogger(ArtistaController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        this.nombre = null;
+        this.nacionalidad = null;
+        this.fecha_nac = null;
     }
 
     public String getMessage() {
@@ -130,6 +119,14 @@ public class ArtistaController {
 
     public void setAuxDisabled(byte auxDisabled) {
         this.auxDisabled = auxDisabled;
+    }
+
+    public String getRuta_temporal() {
+        return ruta_temporal;
+    }
+
+    public void setRuta_temporal(String ruta_temporal) {
+        this.ruta_temporal = ruta_temporal;
     }
 
 }
