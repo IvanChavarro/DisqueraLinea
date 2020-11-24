@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Error 500</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Finger+Paint" rel="stylesheet"></link>
+    </h:head>
+    <style>
+        .cuerpo{
+            background-color: azure;
+        }
+        .contenido img{
+            width: 80%;
+            height: 80%;
+            margin-left: 110px;
+            position: absolute;
+            
+        }
+        .boton{
+            font-family: 'Finger Paint';
+            font-size: 20px;
+            font-style: italic;
+            float: right;
+            margin-right: 450px;
+            top: 440px;
+            border-radius: 15px;
+            border: 3px double darkblue;
+        }
+        .error{
+            font-size: 30px;
+            position: absolute;
+            top: 35px;
+            margin-left: 350px;
+            font-family: 'Finger Paint';
+            color: dodgerblue;
+        }
+    </style>
+    <h:body class="cuerpo">
+         <div class="contenido">
+            <img src="../resources/images/errores/500.png"/>  
+            <p:commandButton class="boton" value="Volver al inicio" />
+            <h:outputText class="error" value="Codigo Error: "/>
+            <!--h:outputText value="Mensaje: "/>
+            <br/>
+            <h:outputText value="Tipo de Excepcion: "/>
+            <br/>
+            <h:outputText value="url "/>
+            <br/>
+            <h:outputText value="Servle"/-->
+        </div>
+
+    </h:body>
+</html>
+

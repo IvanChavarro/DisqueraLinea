@@ -10,7 +10,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Finger+Paint" rel="stylesheet"></link>
         <link rel="preconnect" href="https://fonts.gstatic.com"></link>
         <link href="https://fonts.googleapis.com/css2?family=Miltonian+Tattoo" rel="stylesheet"></link>
-        <h:outputStylesheet name="primeicons/primeicons.css" library="primefaces" />
+        <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Lobster" rel="stylesheet"></link>
     </h:head>
     <!--Estilos-->
     <style>
@@ -20,68 +21,74 @@
             background-size: cover;/*imagen mas ajustada*/
         }
         /*logo*/
-        .titulo{
-            background-image: url(resources/images/iconos/logo.png);
+        .imagen img{
             background-size: cover;/*imagen mas ajustada*/
             position: top;
-            margin-left: 100px;
-            padding-left: 194px;
-            width: 30px;
-            height: 180px;/*100 de alto*/
+            width: 25%;
+            height: 30%;/*100 de alto*/
+            margin-left: 400px;
+            top: 20px;
         }
-        /*Diseño menu principal*/
-        .menu{
-            float: center;
-            margin-left: 150px;
-            padding-left: 100px;
-            width:500px;
-            font-size: 20px;
-            background-color: rgb(231, 101, 14);
-            text-transform: uppercase;
-            color: black;
-            font-weight: bold;
-            top: 60px;   
+        .botones{
+            margin-left: 220px;
         }
-        .ui-menu .ui-menuitem-link {
-            border: solid 3px #c17323e0;
-            margin:2px;
-            color: black; 
-        }
-        .ui-menuitem-text{
+        .botonLogin{
+            text-decoration: none;
+            margin-left: 130px;
             font-family: 'Finger Paint';
-            font-weight: bold; 
+            font-weight: 300;
+            font-size: 22px;
+            font-style: italic;
+            color: #1d0b02;
+            background-color: #692807;
+            border-radius: 15px;
+            border: 3px double #ee5b11;
+            top: 50px;
         }
-        .banner{
-            position: relative;
+        .botonRegistro{
+            text-decoration: none;
+            margin-left: 130px;
+            font-family: 'Finger Paint';
+            font-weight: 300;
+            font-size: 22px;
+            font-style: italic;
+            color: #1d0b02;
+            background-color: #692807;
+            border-radius: 15px;
+            border: 3px double #ee5b11;
+            top: 50px;
         }
-        /*contenido de nosotros*/
         .text{
             text-align: center;
             color: white;
-            margin-top:100px;
+            margin-top: 130px;
+            font-size: 22px;
         }
         .content{
-            font-family: 'Finger Paint';
-            font-size: 20px;
+            font-family: 'Lobster', cursive;
+            border: 3px double #ee5b11;
+            background-color: #692807;
+            border-radius: 15px;
         }
     </style>
     <h:body class="cuerpo">
-        <div class="titulo">
-            <h:form><p:megaMenu class="menu">
-                    <p:menuitem class="inicio" value="Inicio"  url="#" />
-                    <p:menuitem class="login" value="Login" url="#{indexController.login()}" />
-                    <p:menuitem value="Registro" url="#{indexController.registro()}" />
-                    <p:menuitem value="Nosotros" url="#" />
-                </p:megaMenu>
-            </h:form>
+        <!--LOGO-->
+        <div class="imagen">
+            <img src="../resources/images/iconos/logo.png"/>  
         </div>
-        <!--Imagenes-->
-        <div class="banner">
-            <img src="/resources/images/banner/1.jpg "/>    
+        <!--BOTONES-->
+        <div class="botones">
+            <p:commandButton class="botonLogin" value="login" actionListener="#{indexController.login()}" update="botones" />
+            <p:commandButton class="botonRegistro" value="Registro" actionListener="#{indexController.registro()}" update="botones" />
         </div>
+  
+        <!--TEXTO-->
         <div class="text">
             <p:outputLabel class="content" value="Disfruta de esta plataforma 
-                que le permite descargar Discos y Canciones de su interes"/>
+                que te permite"/>
+            <br/>
+            <p:outputLabel class="content" value="descargar Discos y Canciones de tú interes"/>
+            
         </div>
 
     </h:body>
